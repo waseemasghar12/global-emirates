@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Global Emirates — a GCC future intelligence studio for venture creation, growth strategy and investment-grade thinking. www.global-emirates.com">
+<title>Global Emirates — GCC Future Intelligence Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --surface-alt:#F1F0EC;
+  --ink:#14161C; --ink-soft:#4B4F58; --ink-faint:#8A8E97;
+  --line:rgba(20,22,28,0.10); --line-strong:rgba(20,22,28,0.16);
+  --accent:#2E4BD1; --accent-deep:#1C2F8C; --accent-soft:rgba(46,75,209,0.07);
+  --radius-sm:10px; --radius-md:16px; --radius-lg:22px;
+  --shadow-sm: 0 2px 10px rgba(20,22,28,0.04);
+  --shadow-md: 0 10px 34px rgba(20,22,28,0.07);
+  --c-accent:#B8823D; --c-deep:#8F631F; --c-soft:rgba(184,130,61,0.08);
+  --serif:'Fraunces', serif; --sans:'Inter', sans-serif; --mono:'JetBrains Mono', monospace;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{ scroll-behavior:smooth; }
+body{ background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.5; -webkit-font-smoothing:antialiased; }
+::selection{ background:var(--accent); color:#fff; }
+a{ color:inherit; }
+img,svg{ display:block; max-width:100%; }
+.wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{scroll-behavior:auto;} }
+
+/* ---------- NAV ---------- */
+.nav{ position:sticky; top:0; z-index:50; background:rgba(250,249,246,0.85); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+.nav-inner{ max-width:1180px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between; }
+.logo{ font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:-0.3px; display:flex; align-items:center; gap:9px; }
+.plane-mark{ color:var(--accent); flex-shrink:0; transform:translateY(-1px); }
+footer .plane-mark{ color:var(--ink-soft); }
+
+.nav-glow-item{ position:relative; display:inline-flex; align-items:center; }
+.nav-glow-stars{ position:absolute; top:-9px; left:-14px; width:100%; height:22px; pointer-events:none; }
+.nav-glow-stars i{ position:absolute; display:block; width:3px; height:3px; border-radius:50%; background:var(--accent); box-shadow:0 0 5px 1px rgba(46,75,209,0.7); animation:starTwinkle 2.6s ease-in-out infinite; }
+.nav-glow-stars i:nth-child(1){ top:0; left:0; animation-delay:0s; }
+.nav-glow-stars i:nth-child(2){ top:4px; left:44px; width:2px; height:2px; animation-delay:.8s; }
+.nav-glow-stars i:nth-child(3){ top:12px; left:14px; width:2px; height:2px; animation-delay:1.6s; }
+@keyframes starTwinkle{ 0%,100%{ opacity:0.15; transform:scale(0.7); } 50%{ opacity:1; transform:scale(1.3); } }
+@media (prefers-reduced-motion: reduce){ .nav-glow-stars i{ animation:none; opacity:0.6; } }
+.nav-links{ display:flex; gap:30px; list-style:none; }
+.nav-links a{ font-size:13.5px; font-weight:500; text-decoration:none; color:var(--ink-soft); transition:color .15s ease; }
+.nav-links a:hover{ color:var(--ink); }
+.nav-cta{ font-family:var(--sans); font-size:13px; font-weight:600; background:var(--ink); color:#fff; padding:11px 20px; border-radius:100px; text-decoration:none; white-space:nowrap; transition:background .15s ease; }
+.nav-cta:hover{ background:var(--accent-deep); }
+.nav-burger{ display:none; }
+@media (max-width:900px){ .nav-links{ display:none; } }
+
+/* ---------- HERO ---------- */
+.hero{ padding: 140px 0 110px 0; position:relative; overflow:hidden; }
+.hero::after{ content:''; position:absolute; top:0; right:-10%; width:50%; height:100%; background: radial-gradient(ellipse at center, var(--accent-soft), transparent 70%); pointer-events:none; z-index:0; }
+.hero-inner{ position:relative; z-index:1; display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:start; }
+.hero-content{ max-width:640px; }
+.hero-visual{ display:flex; flex-direction:column; align-items:center; gap:22px; padding-top:36px; }
+.hv-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:2px; text-transform:uppercase; color:var(--ink-faint); align-self:flex-start; }
+.hw-grid{ display:flex; flex-direction:column; gap:12px; width:100%; }
+.hw-card{ display:block; background:rgba(255,255,255,0.7); backdrop-filter:blur(10px); border:1px solid var(--line); border-left:3px solid var(--hw-accent); border-radius:14px; padding:14px 18px; text-decoration:none; color:var(--ink); position:relative; box-shadow:var(--shadow-sm); transition:transform .25s ease, box-shadow .25s ease; animation:hwFloat 6s ease-in-out infinite; }
+.hw-card:nth-child(2){ animation-delay:.6s; }
+.hw-card:nth-child(3){ animation-delay:1.2s; }
+.hw-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); }
+@keyframes hwFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+.hw-live{ position:absolute; top:14px; right:16px; width:6px; height:6px; border-radius:50%; background:var(--hw-accent); box-shadow:0 0 0 0 var(--hw-accent); animation:hwPulse 2.2s ease-out infinite; }
+@keyframes hwPulse{ 0%{ box-shadow:0 0 0 0 rgba(184,130,61,0.5);} 70%{ box-shadow:0 0 0 7px rgba(184,130,61,0);} 100%{ box-shadow:0 0 0 0 rgba(184,130,61,0);} }
+.hw-glyph{ font-family:var(--mono); font-size:13px; color:var(--hw-accent); }
+.hw-name{ font-family:var(--serif); font-weight:600; font-size:15px; margin-top:6px; }
+.hw-meta{ font-size:11.5px; color:var(--ink-faint); margin-top:3px; }
+@media (prefers-reduced-motion: reduce){ .hw-card{ animation:none; } .hw-live{ animation:none; } }
+
+.rm-clock{ display:flex; flex-direction:column; align-items:center; gap:10px; background:#14161C; border-radius:20px; padding:20px 24px 16px 24px; box-shadow:var(--shadow-md); }
+.rm-caption{ font-family:var(--mono); font-size:13px; letter-spacing:1px; color:#EDEDED; text-align:center; line-height:1.5; }
+.rm-caption small{ font-size:9px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); }
+#clockHour, #clockMinute, #clockSecond{ transition:transform 0.2s cubic-bezier(.4,2.3,.3,1); }
+
+@media (max-width:900px){ .hero-inner{ grid-template-columns:1fr; } .hero-visual{ align-items:stretch; padding-top:8px; } .hw-grid{ flex-direction:row; flex-wrap:wrap; } .hw-card{ flex:1; min-width:150px; } .rm-clock{ align-self:center; } }
+.eyebrow{ font-family:var(--mono); font-size:11.5px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent-deep); display:flex; align-items:center; gap:10px; margin-bottom:26px; }
+.eyebrow::before{ content:''; width:26px; height:1px; background:var(--accent); }
+.hero h1{ font-family:var(--serif); font-weight:600; font-size:clamp(40px,6vw,76px); line-height:1.03; letter-spacing:-1.5px; }
+.hero h1 em{ font-style:italic; font-weight:500; color:var(--accent-deep); }
+.hero-lede{ margin-top:28px; font-size:19px; color:var(--ink-soft); max-width:560px; line-height:1.65; }
+.hero-ctas{ margin-top:40px; display:flex; gap:14px; flex-wrap:wrap; }
+.btn-primary{ font-size:14px; font-weight:600; background:var(--ink); color:#fff; padding:15px 28px; border-radius:100px; text-decoration:none; transition:all .2s ease; display:inline-block; }
+.btn-primary:hover{ background:var(--accent-deep); transform:translateY(-1px); }
+.btn-ghost{ font-size:14px; font-weight:600; background:transparent; color:var(--ink); padding:15px 28px; border-radius:100px; border:1px solid var(--line-strong); text-decoration:none; transition:all .2s ease; display:inline-block; }
+.btn-ghost:hover{ border-color:var(--ink); }
+.hero-stats{ display:flex; gap:48px; margin-top:80px; flex-wrap:wrap; }
+.hero-stat .v{ font-family:var(--serif); font-weight:600; font-size:28px; color:var(--ink); }
+.hero-stat .l{ font-size:12px; color:var(--ink-faint); margin-top:4px; }
+
+/* ---------- SECTION SHELL ---------- */
+.section{ padding: 100px 0; border-top:1px solid var(--line); }
+.section.tight{ padding: 80px 0; }
+.section-head{ max-width:640px; margin-bottom:56px; }
+.section-eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent-deep); margin-bottom:16px; }
+.section-title{ font-family:var(--serif); font-weight:600; font-size:clamp(28px,3.4vw,42px); letter-spacing:-0.8px; line-height:1.12; }
+.section-sub{ margin-top:16px; color:var(--ink-soft); font-size:16px; line-height:1.65; }
+.alt-bg{ background:var(--surface-alt); }
+
+/* ---------- WHAT WE DO ---------- */
+.pillars-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+.pillar{ position:relative; background:rgba(255,255,255,0.55); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border:1px solid rgba(255,255,255,0.7); border-radius:var(--radius-lg); padding:34px 30px; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease; box-shadow:var(--shadow-sm); isolation:isolate; }
+.pillar:hover{ transform:translateY(-5px); box-shadow:var(--shadow-md); }
+.pillar::before, .pillar::after{ content:''; position:absolute; border-radius:50%; filter:blur(26px); opacity:0.35; z-index:-1; transition:transform .6s ease, opacity .6s ease; }
+.pillar::before{ width:150px; height:150px; background:radial-gradient(circle, var(--accent) 0%, transparent 70%); top:-50px; right:-40px; animation:lavaDrift1 9s ease-in-out infinite; }
+.pillar::after{ width:120px; height:120px; background:radial-gradient(circle, #7B5FE0 0%, transparent 70%); bottom:-40px; left:-30px; animation:lavaDrift2 11s ease-in-out infinite; }
+.pillar:hover::before, .pillar:hover::after{ opacity:0.55; }
+@keyframes lavaDrift1{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-14px,16px) scale(1.15);} }
+@keyframes lavaDrift2{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(12px,-14px) scale(1.1);} }
+.pillar .num{ font-family:var(--mono); font-size:11px; color:var(--ink-faint); position:relative; z-index:1; }
+.pillar h4{ font-family:var(--serif); font-weight:600; font-size:19px; margin-top:14px; position:relative; z-index:1; }
+.pillar p{ font-size:13.5px; color:var(--ink-soft); margin-top:10px; line-height:1.6; position:relative; z-index:1; }
+@media (prefers-reduced-motion: reduce){ .pillar::before, .pillar::after{ animation:none; } }
+@media (max-width:820px){ .pillars-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .pillars-grid{ grid-template-columns:1fr; } }
+
+/* ---------- PHILOSOPHY ---------- */
+.philosophy{ padding: 120px 0; text-align:center; }
+.philosophy blockquote{ font-family:var(--serif); font-weight:500; font-size:clamp(26px,4vw,44px); line-height:1.28; letter-spacing:-0.5px; max-width:900px; margin:0 auto; }
+.philosophy blockquote em{ color:var(--accent-deep); font-style:italic; }
+.phi-grid{ margin-top:64px; display:grid; grid-template-columns:repeat(3,1fr); gap:40px; text-align:left; max-width:900px; margin-left:auto; margin-right:auto; }
+.phi-item .k{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-deep); }
+.phi-item p{ font-size:14px; color:var(--ink-soft); margin-top:10px; line-height:1.6; }
+@media (max-width:700px){ .phi-grid{ grid-template-columns:1fr; text-align:center; } }
+
+/* ---------- INDUSTRIES: FLAGSHIP CARDS ---------- */
+.flagship-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.flagship{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:38px 32px; cursor:pointer; transition:all .25s ease; position:relative; overflow:hidden; }
+.flagship::before{ content:''; position:absolute; top:0; left:0; width:100%; height:3px; background:var(--fs-accent); opacity:0; transition:opacity .25s ease; }
+.flagship:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--fs-accent); }
+.flagship:hover::before, .flagship.active::before{ opacity:1; }
+.flagship.active{ border-color:var(--fs-accent); box-shadow:var(--shadow-md); background:var(--fs-soft); }
+.flagship .glyph{ font-size:22px; letter-spacing:1px; color:var(--fs-deep); font-family:var(--mono); }
+.flagship h3{ font-family:var(--serif); font-weight:600; font-size:25px; margin-top:20px; letter-spacing:-0.4px; }
+.flagship p{ font-size:13.5px; color:var(--ink-soft); margin-top:12px; line-height:1.6; min-height:64px; }
+.flagship .meta{ margin-top:22px; display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:10.5px; letter-spacing:0.5px; text-transform:uppercase; color:var(--fs-deep); }
+.flagship .meta .arrow{ font-size:16px; transition:transform .2s ease; }
+.flagship.active .meta .arrow{ transform:rotate(90deg); }
+#f-moonshot{ --fs-accent:#B8823D; --fs-deep:#8F631F; --fs-soft:rgba(184,130,61,0.06); }
+#f-nexum{ --fs-accent:#7B5FE0; --fs-deep:#4F3CA0; --fs-soft:rgba(123,95,224,0.06); }
+#f-edge{ --fs-accent:#1C8C6E; --fs-deep:#0F5C47; --fs-soft:rgba(28,140,110,0.06); }
+@media (max-width:900px){ .flagship-grid{ grid-template-columns:1fr; } }
+
+/* ---------- WORKSPACE (venture simulator, scoped per category) ---------- */
+.workspace{ margin-top:40px; display:none; }
+.workspace.open{ display:block; }
+.workspace-empty{ text-align:center; padding:60px 20px; color:var(--ink-faint); font-size:14px; border:1px dashed var(--line-strong); border-radius:var(--radius-lg); }
+
+.ws-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:26px; }
+.ws-title{ font-family:var(--serif); font-weight:600; font-size:24px; }
+.ws-title .glyph{ color:var(--c-deep); font-family:var(--mono); font-size:18px; margin-right:8px; }
+.ws-tagline{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
+
+.deck{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:26px 28px; display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:20px; }
+.field label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:1.5px; color:var(--ink-soft); text-transform:uppercase; margin-bottom:10px; }
+.capital-input-row{ display:flex; align-items:center; }
+.capital-input-row .prefix{ font-family:var(--mono); color:var(--c-deep); font-size:15px; background:var(--surface-alt); border:1px solid var(--line); padding:12px; border-radius:8px 0 0 8px; border-right:none; }
+.capital-input-row input{ flex:1; background:var(--surface-alt); border:1px solid var(--line); border-left:none; border-radius:0 8px 8px 0; color:var(--ink); font-family:var(--mono); font-size:16px; padding:12px 14px; outline:none; }
+.capital-input-row input:focus{ border-color:var(--c-accent); }
+.capital-slider{ width:100%; margin-top:14px; accent-color:var(--c-accent); }
+.slider-ticks{ display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px; color:var(--ink-faint); margin-top:4px; }
+.risk-toggle{ display:flex; gap:8px; }
+.risk-btn{ flex:1; background:var(--surface-alt); border:1px solid var(--line); color:var(--ink-soft); font-size:13px; font-weight:600; padding:13px 10px; border-radius:10px; cursor:pointer; transition:all .15s ease; text-align:center; }
+.risk-btn small{ display:block; font-weight:400; font-size:10.5px; color:var(--ink-faint); margin-top:3px; font-family:var(--mono); }
+.risk-btn:hover{ border-color:var(--c-accent); color:var(--ink); }
+.risk-btn.active{ background:var(--c-soft); border-color:var(--c-accent); color:var(--c-deep); }
+
+.ranking{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:22px 26px; margin-bottom:24px; }
+.rank-title{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; color:var(--ink-faint); text-transform:uppercase; margin-bottom:8px; }
+.rank-row{ display:grid; grid-template-columns:26px 240px 1fr 60px; align-items:center; gap:14px; cursor:pointer; padding:8px 6px; border-radius:8px; }
+.rank-row:hover{ background:var(--surface-alt); }
+.rank-num{ font-family:var(--mono); color:var(--ink-faint); font-size:13px; }
+.rank-name{ font-size:13.5px; font-weight:600; }
+.rank-bar-track{ height:7px; background:var(--surface-alt); border-radius:4px; overflow:hidden; }
+.rank-bar-fill{ height:100%; border-radius:4px; background:linear-gradient(90deg, var(--c-deep), var(--c-accent)); transition:width .4s ease; }
+.rank-score{ font-family:var(--mono); text-align:right; color:var(--c-deep); font-size:13.5px; font-weight:700; }
+
+.mini-label{ font-family:var(--mono); font-size:11px; letter-spacing:2px; color:var(--ink-faint); text-transform:uppercase; margin:36px 0 16px 0; display:flex; align-items:center; gap:12px; }
+.mini-label::after{ content:''; flex:1; height:1px; background:var(--line); }
+
+.cards{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+.vcard{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-md); padding:20px; cursor:pointer; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.vcard:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); }
+.vcard.selected{ border-color:var(--c-accent); background:var(--c-soft); }
+.vcard .num{ font-family:var(--mono); font-size:10.5px; color:var(--ink-faint); }
+.vcard .name{ font-family:var(--serif); font-weight:600; font-size:16px; margin-top:8px; line-height:1.25; }
+.vcard .tag{ font-size:12px; color:var(--ink-soft); margin-top:8px; line-height:1.5; min-height:48px; }
+.vcard-stats{ margin-top:14px; display:flex; flex-direction:column; gap:6px; }
+.vcard-stat{ display:flex; justify-content:space-between; font-size:11px; }
+.vcard-stat .k{ color:var(--ink-faint); font-family:var(--mono); }
+.vcard-stat .v{ font-family:var(--mono); font-weight:600; }
+.pos{ color:#1C8C6E; } .neg{ color:#C25141; } .gold-v{ color:var(--c-deep); }
+.tag-ground{ display:inline-block; margin-top:10px; font-family:var(--mono); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#1C8C6E; background:rgba(28,140,110,0.1); padding:3px 8px; border-radius:6px; }
+.card-cta{ margin-top:12px; font-family:var(--mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--c-deep); }
+
+/* ---------- REPORT ---------- */
+.report{ margin-top:24px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); display:none; overflow:hidden; }
+.report.open{ display:block; }
+.report-hero{ padding:44px 40px 32px 40px; background:var(--c-soft); border-bottom:1px solid var(--line); position:relative; }
+.report-eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--c-deep); margin-bottom:10px; }
+.report-brand{ font-family:var(--serif); font-weight:600; font-size:clamp(26px,3.2vw,38px); color:var(--ink); line-height:1.08; }
+.report-tagline{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:15px; color:var(--c-deep); margin-top:8px; }
+.report-fullname{ font-size:12.5px; color:var(--ink-faint); margin-top:12px; }
+.report-fit{ position:absolute; top:40px; right:40px; text-align:center; font-family:var(--mono); }
+.report-fit .num{ font-size:28px; font-weight:700; color:var(--c-deep); }
+.report-fit .lbl{ font-size:9px; letter-spacing:1.5px; color:var(--ink-faint); text-transform:uppercase; }
+.report-nav{ display:flex; flex-wrap:wrap; gap:6px; padding:14px 40px; background:var(--surface-alt); border-bottom:1px solid var(--line); position:sticky; top:72px; z-index:5; }
+.report-nav a{ font-family:var(--mono); font-size:10px; letter-spacing:0.5px; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; padding:6px 10px; border-radius:8px; white-space:nowrap; }
+.report-nav a:hover{ color:var(--c-deep); background:var(--c-soft); }
+.rsec{ padding:32px 40px; border-bottom:1px solid var(--line); scroll-margin-top:130px; }
+.rsec:last-child{ border-bottom:none; }
+.rsec-num{ font-family:var(--mono); font-size:11px; color:var(--c-deep); letter-spacing:1.5px; }
+.rsec h3{ font-family:var(--serif); font-weight:600; font-size:20px; color:var(--ink); margin-top:4px; margin-bottom:16px; }
+.rsec p.lede{ color:var(--ink-soft); font-size:13.5px; line-height:1.7; max-width:740px; margin-bottom:16px; }
+.vm-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:22px; }
+.vm-box{ background:var(--surface-alt); border:1px solid var(--line); border-radius:12px; padding:18px 20px; }
+.vm-box .k{ font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--c-deep); }
+.vm-box p{ font-size:13.5px; color:var(--ink); margin-top:8px; line-height:1.55; }
+.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin-bottom:22px; }
+.stat-card{ background:var(--surface-alt); border:1px solid var(--line); border-radius:12px; padding:16px; text-align:center; }
+.stat-card .v{ font-family:var(--serif); font-weight:600; font-size:20px; color:var(--c-deep); }
+.stat-card .l{ font-size:10px; color:var(--ink-soft); margin-top:6px; line-height:1.4; }
+.pillar-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:12px; }
+.pillar-card{ background:var(--surface-alt); border:1px solid var(--line); border-left:3px solid var(--c-accent); border-radius:10px; padding:15px 17px; }
+.pillar-card .t{ font-family:var(--serif); font-weight:600; font-size:14px; }
+.pillar-card .d{ font-size:12px; color:var(--ink-soft); margin-top:6px; line-height:1.5; }
+.data-table{ width:100%; border-collapse:collapse; }
+.data-table th{ text-align:left; font-family:var(--mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-faint); padding:8px 12px; border-bottom:1px solid var(--line); }
+.data-table td{ padding:11px 12px; font-size:12.5px; color:var(--ink); border-bottom:1px solid var(--line); }
+.data-table tr:last-child td{ border-bottom:none; }
+.data-table td.num{ font-family:var(--mono); text-align:right; color:var(--c-deep); font-weight:600; }
+.table-wrap{ background:var(--surface-alt); border:1px solid var(--line); border-radius:12px; padding:10px 8px; overflow-x:auto; margin-bottom:16px; }
+.table-title{ font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--c-deep); padding:8px 12px 0 12px; }
+.persona-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:14px; }
+.persona-card{ background:var(--surface-alt); border:1px solid var(--line); border-radius:14px; padding:18px; }
+.persona-top{ display:flex; align-items:center; gap:12px; }
+.persona-avatar{ width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg, var(--c-accent), var(--c-deep)); display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--serif); font-weight:600; font-size:15px; flex-shrink:0; }
+.persona-name{ font-family:var(--serif); font-weight:600; font-size:14px; }
+.persona-role{ font-size:11px; color:var(--ink-faint); margin-top:2px; }
+.persona-quote{ font-size:12.5px; font-style:italic; color:var(--c-deep); margin:13px 0; line-height:1.5; border-left:2px solid var(--c-accent); padding-left:11px; }
+.persona-list-label{ font-family:var(--mono); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-faint); margin-top:10px; }
+.persona-card ul{ margin:6px 0 0 16px; }
+.persona-card li{ font-size:12px; color:var(--ink-soft); line-height:1.6; }
+.chart-wrap{ background:var(--surface-alt); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:16px; }
+.chart-label{ font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px; }
+.bars{ display:flex; align-items:flex-end; gap:6px; height:150px; }
+.bar-col{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+.bar{ width:100%; border-radius:5px 5px 2px 2px; background:linear-gradient(180deg, var(--c-accent), var(--c-deep)); min-height:3px; }
+.bar-val{ font-family:var(--mono); font-size:9px; color:var(--c-deep); margin-bottom:4px; }
+.bar-lbl{ font-family:var(--mono); font-size:9px; color:var(--ink-faint); margin-top:6px; }
+.year-bars{ display:flex; gap:22px; height:170px; align-items:flex-end; justify-content:center; }
+.year-col{ display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:100px; height:100%; }
+.year-bar{ width:64px; border-radius:8px 8px 3px 3px; background:linear-gradient(180deg, var(--c-accent), var(--c-deep)); }
+.year-val{ font-family:var(--serif); font-weight:600; font-size:14px; color:var(--c-deep); margin-bottom:6px; }
+.year-lbl{ font-family:var(--mono); font-size:10px; color:var(--ink-soft); margin-top:8px; }
+.flow-wrap{ display:flex; flex-wrap:wrap; align-items:center; gap:0; margin-top:6px; }
+.flow-node{ background:var(--surface-alt); border:1px solid var(--c-accent); border-radius:12px; padding:13px 15px; font-size:11.5px; color:var(--ink-soft); min-width:140px; text-align:center; line-height:1.4; }
+.flow-arrow{ color:var(--ink-faint); font-size:16px; padding:0 8px; }
+.staff-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:10px; margin-top:6px; }
+.staff-card{ background:var(--surface-alt); border:1px solid var(--line); border-radius:10px; padding:13px; text-align:center; }
+.staff-card .m{ font-family:var(--mono); font-size:9px; color:var(--c-deep); letter-spacing:1px; }
+.staff-card .r{ font-family:var(--serif); font-weight:600; font-size:12.5px; margin-top:6px; }
+.mkt-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+.mkt-card{ background:var(--surface-alt); border:1px solid var(--line); border-radius:12px; padding:16px 18px; font-size:12.5px; color:var(--ink-soft); line-height:1.6; }
+.mkt-card .t{ font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--c-deep); margin-bottom:8px; }
+.mkt-card ul{ margin-left:15px; }
+.risk-table-wrap{ background:var(--surface-alt); border:1px solid var(--line); border-radius:12px; overflow-x:auto; }
+.rt{ width:100%; border-collapse:collapse; }
+.rt th{ text-align:left; font-family:var(--mono); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-faint); padding:10px 12px; border-bottom:1px solid var(--line); }
+.rt td{ padding:11px 12px; font-size:12px; color:var(--ink-soft); border-bottom:1px solid var(--line); vertical-align:top; }
+.rt tr:last-child td{ border-bottom:none; }
+.risk-badge{ font-family:var(--mono); font-size:9.5px; padding:3px 7px; border-radius:6px; display:inline-block; white-space:nowrap; }
+.risk-badge.high{ background:rgba(194,81,65,0.12); color:#C25141; }
+.risk-badge.med{ background:rgba(184,130,61,0.12); color:var(--c-deep); }
+.risk-badge.low{ background:rgba(28,140,110,0.12); color:#1C8C6E; }
+.phase-track{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:6px; }
+.phase-card{ background:var(--surface-alt); border:1px solid var(--line); border-top:3px solid var(--c-accent); border-radius:12px; padding:15px; min-height:170px; }
+.phase-card .p{ font-family:var(--mono); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--c-deep); }
+.phase-card .m{ font-size:10px; color:var(--ink-faint); margin-top:2px; }
+.phase-card .t{ font-family:var(--serif); font-weight:600; font-size:13.5px; margin-top:8px; }
+.phase-card ul{ margin:8px 0 0 15px; }
+.phase-card li{ font-size:11px; color:var(--ink-soft); line-height:1.6; }
+.ask-box{ background:var(--c-soft); border:1px solid var(--c-accent); border-radius:14px; padding:24px 26px; }
+.ask-amount{ font-family:var(--serif); font-weight:600; font-size:28px; color:var(--c-deep); }
+.ask-sub{ font-size:12px; color:var(--ink-soft); margin-top:6px; }
+.ask-fund-status{ margin-top:12px; font-family:var(--mono); font-size:11.5px; padding:7px 13px; border-radius:8px; display:inline-block; }
+.ask-fund-status.ok{ background:rgba(28,140,110,0.12); color:#1C8C6E; }
+.ask-fund-status.partial{ background:rgba(184,130,61,0.14); color:var(--c-deep); }
+.ask-fund-status.short{ background:rgba(194,81,65,0.12); color:#C25141; }
+.use-of-funds{ margin-top:18px; }
+.uf-row{ display:grid; grid-template-columns:150px 1fr 46px; gap:12px; align-items:center; margin-top:8px; }
+.uf-label{ font-size:11.5px; color:var(--ink-soft); }
+.uf-track{ height:7px; background:rgba(20,22,28,0.08); border-radius:4px; overflow:hidden; }
+.uf-fill{ height:100%; background:linear-gradient(90deg, var(--c-deep), var(--c-accent)); border-radius:4px; }
+.uf-pct{ font-family:var(--mono); font-size:11.5px; text-align:right; color:var(--c-deep); }
+.teaser-cta{ text-align:center; padding:8px 0 4px 0; }
+.teaser-cta a{ display:inline-block; margin-top:14px; }
+
+/* ---------- PROCESS ---------- */
+.process-track{ display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative; }
+.process-track::before{ content:''; position:absolute; top:22px; left:5%; right:5%; height:1px; background:var(--line-strong); z-index:0; }
+.process-step{ position:relative; z-index:1; padding-right:20px; }
+.process-step .idx{ width:44px; height:44px; border-radius:50%; background:var(--surface); border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:14px; font-weight:700; color:var(--accent-deep); }
+.process-step h4{ font-family:var(--serif); font-weight:600; font-size:17px; margin-top:18px; }
+.process-step p{ font-size:12.5px; color:var(--ink-soft); margin-top:8px; line-height:1.55; }
+@media (max-width:900px){ .process-track{ grid-template-columns:1fr 1fr; gap:28px; } .process-track::before{ display:none; } }
+@media (max-width:560px){ .process-track{ grid-template-columns:1fr; } }
+
+/* ---------- INSIGHTS ---------- */
+.insights-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.insight-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-md); padding:28px 26px; transition:all .2s ease; cursor:pointer; }
+.insight-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); border-color:var(--line-strong); }
+.insight-tag{ font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-deep); }
+.insight-card h4{ font-family:var(--serif); font-weight:600; font-size:19px; margin-top:14px; line-height:1.25; }
+.insight-card p{ font-size:13px; color:var(--ink-soft); margin-top:12px; line-height:1.6; }
+.insight-read{ margin-top:18px; font-size:12.5px; font-weight:600; color:var(--ink); display:flex; align-items:center; gap:6px; }
+@media (max-width:900px){ .insights-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .insights-grid{ grid-template-columns:1fr; } }
+
+/* ---------- CASE STUDIES ---------- */
+.case-list{ display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; }
+.case-item{ background:var(--surface); padding:36px 34px; display:grid; grid-template-columns:200px 1fr; gap:32px; }
+.case-tag{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-deep); }
+.case-item h4{ font-family:var(--serif); font-weight:600; font-size:22px; margin-top:10px; line-height:1.25; }
+.case-flow{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:20px; }
+.case-flow-step .k{ font-family:var(--mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-faint); }
+.case-flow-step p{ font-size:12.5px; color:var(--ink-soft); margin-top:6px; line-height:1.55; }
+@media (max-width:900px){ .case-item{ grid-template-columns:1fr; } .case-flow{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .case-flow{ grid-template-columns:1fr; } }
+
+/* ---------- WHY US ---------- */
+.why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.why-stat{ text-align:center; padding:30px 16px; }
+.why-stat .v{ font-family:var(--serif); font-weight:600; font-size:clamp(30px,3.4vw,44px); color:var(--accent-deep); letter-spacing:-1px; }
+.why-stat .l{ font-size:12.5px; color:var(--ink-soft); margin-top:10px; }
+@media (max-width:800px){ .why-grid{ grid-template-columns:1fr 1fr; } }
+
+/* ---------- TESTIMONIALS ---------- */
+.testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.testi-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-md); padding:28px 26px; }
+.testi-card p.quote{ font-family:var(--serif); font-size:16px; font-style:italic; line-height:1.55; color:var(--ink); }
+.testi-attr{ margin-top:20px; font-size:12px; color:var(--ink-faint); font-family:var(--mono); }
+@media (max-width:900px){ .testi-grid{ grid-template-columns:1fr; } }
+
+/* ---------- ABOUT ---------- */
+.about-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+.about-quote{ font-family:var(--serif); font-weight:500; font-size:clamp(24px,3vw,34px); line-height:1.3; letter-spacing:-0.5px; }
+.about-body p{ font-size:14.5px; color:var(--ink-soft); line-height:1.75; margin-top:16px; }
+@media (max-width:800px){ .about-wrap{ grid-template-columns:1fr; } }
+
+/* ---------- CONTACT ---------- */
+.contact-wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; }
+.contact-info h3{ font-family:var(--serif); font-weight:600; font-size:26px; letter-spacing:-0.4px; }
+.contact-info p{ font-size:14px; color:var(--ink-soft); margin-top:16px; line-height:1.7; max-width:360px; }
+.contact-detail{ margin-top:28px; font-size:13.5px; }
+.contact-detail div{ margin-top:8px; color:var(--ink-soft); }
+.contact-form{ display:flex; flex-direction:column; gap:16px; }
+.form-row{ display:flex; flex-direction:column; gap:8px; }
+.form-row label{ font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-soft); }
+.form-row input, .form-row textarea{ background:var(--surface); border:1px solid var(--line-strong); border-radius:10px; padding:13px 15px; font-family:var(--sans); font-size:14px; color:var(--ink); outline:none; resize:vertical; }
+.form-row input:focus, .form-row textarea:focus{ border-color:var(--accent); }
+.form-submit{ margin-top:6px; }
+.form-success{ display:none; background:var(--accent-soft); border:1px solid var(--accent); border-radius:12px; padding:20px; font-size:14px; color:var(--accent-deep); }
+.form-success.show{ display:block; }
+@media (max-width:820px){ .contact-wrap{ grid-template-columns:1fr; } }
+
+/* ---------- FOOTER ---------- */
+footer{ border-top:1px solid var(--line); padding:48px 0; }
+.footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-links{ display:flex; gap:24px; list-style:none; flex-wrap:wrap; }
+.footer-links a{ font-size:12.5px; color:var(--ink-soft); text-decoration:none; }
+.footer-copy{ font-size:12px; color:var(--ink-faint); }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <svg class="plane-mark" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M21.5 15.5L13.8 11.2L16.7 3.9C16.95 3.25 16.45 2.6 15.8 2.75C15.55 2.8 15.35 2.97 15.2 3.2L11 10.3L4.3 8.4C3.85 8.27 3.4 8.55 3.35 9C3.32 9.25 3.42 9.5 3.62 9.65L8.6 13.4L5.9 16.5C5.7 16.73 5.68 17.05 5.86 17.3C6.03 17.55 6.35 17.65 6.62 17.53L10.3 15.9L11.9 19.7C12.05 20.05 12.42 20.25 12.78 20.15C13.03 20.08 13.22 19.88 13.28 19.62L14.5 13.5L21.1 16.4C21.4 16.53 21.75 16.4 21.87 16.1C21.94 15.92 21.9 15.72 21.5 15.5Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+      </svg>
+      Global&nbsp;Emirates
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#what-we-do" class="nav-glow-item"><span class="nav-glow-stars" aria-hidden="true"><i></i><i></i><i></i></span>Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#industries">Future Ventures</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book a Strategy Call</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow">GCC Future Intelligence Studio</div>
+      <h1>Industries &amp; <em>Future Ventures.</em></h1>
+      <p class="hero-lede">We help founders, enterprises, and governments identify future opportunities, design new ventures, and build businesses that matter.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Book a Strategy Call</a>
+        <a href="#industries" class="btn-ghost">Explore Our Thinking</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="v">15+</div><div class="l">Years of applied strategy work</div></div>
+        <div class="hero-stat"><div class="v">10+</div><div class="l">Markets explored</div></div>
+        <div class="hero-stat"><div class="v">AED 500M+</div><div class="l">Business value created</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hv-label">Live Venture Portfolios</div>
+      <div class="hw-grid">
+        <a href="#industries" class="hw-card" style="--hw-accent:#B8823D;">
+          <span class="hw-live"></span>
+          <div class="hw-glyph">⭒˚.⋆⭒🪐</div>
+          <div class="hw-name">Moonshot Vault</div>
+          <div class="hw-meta">6 ventures fully modeled</div>
+        </a>
+        <a href="#industries" class="hw-card" style="--hw-accent:#7B5FE0;">
+          <span class="hw-live"></span>
+          <div class="hw-glyph">જ⁀➴</div>
+          <div class="hw-name">Nexum Infinity</div>
+          <div class="hw-meta">Breakthrough concepts mapped</div>
+        </a>
+        <a href="#industries" class="hw-card" style="--hw-accent:#1C8C6E;">
+          <span class="hw-live"></span>
+          <div class="hw-glyph">.☘︎ ݁˖</div>
+          <div class="hw-name">Edge of Possible</div>
+          <div class="hw-meta">6 ventures ready to build</div>
+        </a>
+      </div>
+
+      <div class="rm-clock">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <defs>
+            <linearGradient id="rmBezel" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3a3f4a"/>
+              <stop offset="100%" stop-color="#14161c"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="57" fill="url(#rmBezel)"/>
+          <circle cx="60" cy="60" r="57" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.5"/>
+          <circle cx="60" cy="60" r="48" fill="#0F1116" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <g stroke="rgba(255,255,255,0.35)" stroke-width="1">
+            <line x1="60" y1="15" x2="60" y2="22"/>
+            <line x1="60" y1="98" x2="60" y2="105"/>
+            <line x1="15" y1="60" x2="22" y2="60"/>
+            <line x1="98" y1="60" x2="105" y2="60"/>
+          </g>
+          <g stroke="rgba(255,255,255,0.15)" stroke-width="0.6">
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(30 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(60 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(120 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(150 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(210 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(240 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(300 60 60)"/>
+            <line x1="60" y1="20" x2="60" y2="24" transform="rotate(330 60 60)"/>
+          </g>
+          <line x1="38" y1="42" x2="52" y2="56" stroke="var(--accent)" stroke-width="0.6" opacity="0.5"/>
+          <line x1="82" y1="42" x2="68" y2="56" stroke="var(--accent)" stroke-width="0.6" opacity="0.5"/>
+          <g id="clockHour" transform="rotate(0 60 60)"><line x1="60" y1="60" x2="60" y2="36" stroke="#EDEDED" stroke-width="2.6" stroke-linecap="round"/></g>
+          <g id="clockMinute" transform="rotate(0 60 60)"><line x1="60" y1="60" x2="60" y2="24" stroke="#EDEDED" stroke-width="1.8" stroke-linecap="round"/></g>
+          <g id="clockSecond" transform="rotate(0 60 60)"><line x1="60" y1="66" x2="60" y2="20" stroke="var(--accent)" stroke-width="0.8" stroke-linecap="round"/></g>
+          <circle cx="60" cy="60" r="2.6" fill="var(--accent)"/>
+          <circle cx="60" cy="60" r="1" fill="#0F1116"/>
+        </svg>
+        <div class="rm-caption"><span id="clockDigital">00:00:00</span><br><small>DUBAI &middot; GMT+4</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="what-we-do">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Six disciplines. One thesis: get there before the market does.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar"><div class="num">01</div><h4>Venture Creation</h4><p>From first signal to first customer — we design, validate and stand up new businesses.</p></div>
+      <div class="pillar"><div class="num">02</div><h4>Growth Strategy</h4><p>Sharpening where a business competes, and rebuilding the plan to win there faster.</p></div>
+      <div class="pillar"><div class="num">03</div><h4>AI Transformation</h4><p>Rebuilding operating models around AI leverage — not bolting a chatbot onto the old one.</p></div>
+      <div class="pillar"><div class="num">04</div><h4>Market Expansion</h4><p>Regional and global entry built on real demand signal, not a translated deck.</p></div>
+      <div class="pillar"><div class="num">05</div><h4>Innovation Labs</h4><p>A standing capability to keep discovering what's next, inside your own organization.</p></div>
+      <div class="pillar"><div class="num">06</div><h4>Investment Strategy</h4><p>Capital allocation built on where the next decade of value actually forms.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy reveal alt-bg" id="philosophy">
+  <div class="wrap">
+    <blockquote>We don't chase trends. We identify <em>shifts before they become trends.</em> Instead of reacting to the market, we position companies <em>ahead</em> of it.</blockquote>
+    <div class="phi-grid">
+      <div class="phi-item"><div class="k">Signal</div><p>We track the five forces — technology, behavior, regulation, demographics, economics — for the moment they align.</p></div>
+      <div class="phi-item"><div class="k">Structure</div><p>Every opportunity gets a real business architecture before it gets a pitch deck.</p></div>
+      <div class="phi-item"><div class="k">Scale</div><p>We build for the blueprint the rest of the world eventually copies, not the quarter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Industries &amp; Future Ventures</div>
+      <h2 class="section-title">Three portfolios. One venture-creation engine.</h2>
+      <p class="section-sub">Each portfolio is a live venture-strategy workspace — stress-test capital and risk against real business models, then open the full plan.</p>
+    </div>
+
+    <div class="flagship-grid" id="flagshipGrid">
+      <div class="flagship" id="f-moonshot" data-cat="moonshot">
+        <div class="glyph">⭒˚.⋆⭒🪐</div>
+        <h3>Moonshot Vault</h3>
+        <p>Six ventures the world hasn't built yet — fully modeled, stress-tested against your capital, ready to found.</p>
+        <div class="meta"><span>6 ventures &middot; full plans</span><span class="arrow">›</span></div>
+      </div>
+      <div class="flagship" id="f-nexum" data-cat="nexum">
+        <div class="glyph">જ⁀➴</div>
+        <h3>Nexum Infinity</h3>
+        <p>Breakthrough-level concepts pulled from the edge of what's next for the GCC — strategy-led, not generic.</p>
+        <div class="meta"><span>10 ventures &middot; strategic profiles</span><span class="arrow">›</span></div>
+      </div>
+      <div class="flagship" id="f-edge" data-cat="edge">
+        <div class="glyph">.☘︎ ݁˖</div>
+        <h3>Edge of Possible</h3>
+        <p>Practical, buildable ventures ready for execution across the UAE and GCC today.</p>
+        <div class="meta"><span>6 ventures &middot; 3 full plans</span><span class="arrow">›</span></div>
+      </div>
+    </div>
+
+    <div class="workspace" id="workspace">
+      <div class="ws-head">
+        <div>
+          <div class="ws-title"><span class="glyph" id="wsGlyph"></span><span id="wsTitle"></span></div>
+          <div class="ws-tagline" id="wsTagline"></div>
+        </div>
+      </div>
+
+      <div class="deck">
+        <div class="field">
+          <label>Initial Capital Available (AED)</label>
+          <div class="capital-input-row">
+            <span class="prefix">AED</span>
+            <input type="number" id="capitalInput" value="150000" step="5000" min="0">
+          </div>
+          <input type="range" id="capitalSlider" class="capital-slider" min="0" max="600000" step="5000" value="150000">
+          <div class="slider-ticks"><span>0</span><span>150K</span><span>300K</span><span>450K</span><span>600K+</span></div>
+        </div>
+        <div class="field">
+          <label>Risk Tolerance</label>
+          <div class="risk-toggle" id="riskToggle">
+            <div class="risk-btn" data-risk="conservative">Conservative<small>Protect capital</small></div>
+            <div class="risk-btn active" data-risk="balanced">Balanced<small>Measured upside</small></div>
+            <div class="risk-btn" data-risk="aggressive">Aggressive<small>Chase novelty</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <div class="rank-title">Live fit ranking within this portfolio</div>
+        <div id="rankList"></div>
+      </div>
+
+      <div class="mini-label">Select a venture to open its plan</div>
+      <div class="cards" id="cardGrid"></div>
+
+      <div class="report" id="reportPanel"></div>
+    </div>
+
+    <div class="workspace-empty" id="workspaceEmpty">Select a portfolio above — Moonshot Vault, Nexum Infinity, or Edge of Possible — to open its ventures.</div>
+  </div>
+</section>
+
+<section class="section reveal alt-bg" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Process</div>
+      <h2 class="section-title">A five-step method, applied the same way every time.</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-step"><div class="idx">01</div><h4>Discover</h4><p>Map the five forces already moving in your market before anyone names the trend.</p></div>
+      <div class="process-step"><div class="idx">02</div><h4>Research</h4><p>Size the opportunity, the regulation, and the customer with real evidence, not assumption.</p></div>
+      <div class="process-step"><div class="idx">03</div><h4>Strategy</h4><p>Turn the signal into a business architecture: model, pricing, moat, and sequencing.</p></div>
+      <div class="process-step"><div class="idx">04</div><h4>Execution</h4><p>Stand up the first version, the first customers, and the first proof points.</p></div>
+      <div class="process-step"><div class="idx">05</div><h4>Scale</h4><p>Compound what works into the blueprint the rest of the market eventually copies.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="insights">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Featured Insights</div>
+      <h2 class="section-title">Thinking from the edge of the next decade.</h2>
+    </div>
+    <div class="insights-grid">
+      <div class="insight-card"><div class="insight-tag">Venture Signal</div><h4>The Next Billion-Dollar Industries</h4><p>Where technology, regulation and demographics are already lining up — and where they aren't yet, but will.</p><div class="insight-read">Read the brief &rarr;</div></div>
+      <div class="insight-card"><div class="insight-tag">Artificial Intelligence</div><h4>AI After 2030</h4><p>What changes once model capability stops being the bottleneck and trust, energy and distribution become the real constraints.</p><div class="insight-read">Read the brief &rarr;</div></div>
+      <div class="insight-card"><div class="insight-tag">Healthcare</div><h4>Future of Healthcare</h4><p>From reactive treatment to continuous, personalized prevention — and what that does to every incumbent business model.</p><div class="insight-read">Read the brief &rarr;</div></div>
+      <div class="insight-card"><div class="insight-tag">Policy &amp; Nation-Building</div><h4>UAE Vision 2040</h4><p>Reading national strategy as a map of where regulatory tailwind will make ventures easier to build.</p><div class="insight-read">Read the brief &rarr;</div></div>
+      <div class="insight-card"><div class="insight-tag">Robotics</div><h4>Robotics Economy</h4><p>What happens to labor, real estate and logistics once humanoid robots hit price parity.</p><div class="insight-read">Read the brief &rarr;</div></div>
+      <div class="insight-card"><div class="insight-tag">Urbanism</div><h4>Future Cities</h4><p>Designing for populations that will live longer, work differently, and expect infrastructure to think.</p><div class="insight-read">Read the brief &rarr;</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal alt-bg" id="case-studies">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Case Studies</div>
+      <h2 class="section-title">Representative engagements, told the way we actually work.</h2>
+    </div>
+    <div class="case-list">
+      <div class="case-item">
+        <div><div class="case-tag">Logistics &amp; Operations</div><h4>A regional quick-commerce network losing margin to unmanaged delivery cost.</h4></div>
+        <div>
+          <div class="case-flow">
+            <div class="case-flow-step"><div class="k">Problem</div><p>Cost-per-order had crept up 30% across three cities with no single owner of the number.</p></div>
+            <div class="case-flow-step"><div class="k">Thinking</div><p>Fleet mix, headcount and 3PL contracts were never benchmarked against each other.</p></div>
+            <div class="case-flow-step"><div class="k">Solution</div><p>A regional CPO benchmark model and a renegotiated vendor mix, installed as a system the team could run alone.</p></div>
+            <div class="case-flow-step"><div class="k">Impact</div><p>Cost-per-order reduced within a single quarter, with the tracking system still running after handover.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-item">
+        <div><div class="case-tag">Retail &amp; AI Commerce</div><h4>A multi-branch retailer invisible to the AI agents now doing the shopping.</h4></div>
+        <div>
+          <div class="case-flow">
+            <div class="case-flow-step"><div class="k">Problem</div><p>Legacy catalog and inventory systems couldn't be read by any AI shopping assistant.</p></div>
+            <div class="case-flow-step"><div class="k">Thinking</div><p>The gap wasn't demand — it was legibility. The global protocols already existed.</p></div>
+            <div class="case-flow-step"><div class="k">Solution</div><p>A catalog-normalization and protocol-integration layer, with fulfillment reliability as the differentiator.</p></div>
+            <div class="case-flow-step"><div class="k">Impact</div><p>First agent-routed orders live within one quarter, with a reusable integration for future protocols.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-item">
+        <div><div class="case-tag">Family Office &amp; Governance</div><h4>A multi-household family with no visibility into its own AI footprint.</h4></div>
+        <div>
+          <div class="case-flow">
+            <div class="case-flow-step"><div class="k">Problem</div><p>Four households, a dozen AI subscriptions, and no one auditing what any of them were actually doing.</p></div>
+            <div class="case-flow-step"><div class="k">Thinking</div><p>The family needed a governance layer, not another app.</p></div>
+            <div class="case-flow-step"><div class="k">Solution</div><p>A household agent inventory, a risk-scoring framework, and a standing advisor relationship.</p></div>
+            <div class="case-flow-step"><div class="k">Impact</div><p>A single monthly report replaced a dozen unmonitored subscriptions across the family group.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="why-us">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Why Us</div>
+      <h2 class="section-title">The track record behind the thinking.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-stat"><div class="v">15+</div><div class="l">Years experienced experts</div></div>
+      <div class="why-stat"><div class="v">10+</div><div class="l">Markets explored by us</div></div>
+      <div class="why-stat"><div class="v">100+</div><div class="l">Projects done by the team</div></div>
+      <div class="why-stat"><div class="v">AED 500M+</div><div class="l">Business value created by the minds behind it</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal alt-bg" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Testimonials</div>
+      <h2 class="section-title">What it's like to work with us.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p class="quote">"They found the shift in our category before our board even agreed it was happening."</p><div class="testi-attr">— Managing Partner, GCC Family Office</div></div>
+      <div class="testi-card"><p class="quote">"Less like a consultancy, more like a co-founder who happens to have already mapped the market."</p><div class="testi-attr">— Founder, Regional D2C Brand</div></div>
+      <div class="testi-card"><p class="quote">"The plan was precise enough to fund and honest enough to trust."</p><div class="testi-attr">— Investment Director, Sovereign-Adjacent Fund</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="about">
+  <div class="wrap about-wrap">
+    <div class="about-quote">"We believe every generation creates companies that redefine how the world lives. We exist to help build those companies."</div>
+    <div class="about-body">
+      <p>Global Emirates is a future-intelligence studio working across the UAE and GCC — built for founders, enterprises and governments who need more than a strategy deck.</p>
+      <p>We combine first-principles venture design with real operating experience, so every plan we hand over is one we'd be willing to run ourselves.</p>
+      <p>Our work spans venture creation, growth strategy, AI transformation, market expansion, innovation labs and investment strategy — always pointed at the same question: what's already moving that the market hasn't priced in yet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal alt-bg" id="contact">
+  <div class="wrap contact-wrap">
+    <div class="contact-info">
+      <h3>Let's find your next decade.</h3>
+      <p>Tell us what you're building, or what you suspect is about to change. We'll come back with a point of view, not a proposal.</p>
+      <div class="contact-detail">
+        <div>Dubai, United Arab Emirates</div>
+        <div>hello@global-emirates.com</div>
+        <div>www.global-emirates.com</div>
+        <div>+971 4 000 0000</div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row"><label>Name</label><input type="text" required placeholder="Your full name"></div>
+      <div class="form-row"><label>Email</label><input type="email" required placeholder="you@company.com"></div>
+      <div class="form-row"><label>Tell us about your challenge</label><textarea rows="4" required placeholder="What are you building, or trying to figure out?"></textarea></div>
+      <button type="submit" class="btn-primary form-submit">Book Meeting</button>
+      <div class="form-success" id="formSuccess">Thank you — we've received your message and will be in touch within one business day.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="logo">
+      <svg class="plane-mark" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M21.5 15.5L13.8 11.2L16.7 3.9C16.95 3.25 16.45 2.6 15.8 2.75C15.55 2.8 15.35 2.97 15.2 3.2L11 10.3L4.3 8.4C3.85 8.27 3.4 8.55 3.35 9C3.32 9.25 3.42 9.5 3.62 9.65L8.6 13.4L5.9 16.5C5.7 16.73 5.68 17.05 5.86 17.3C6.03 17.55 6.35 17.65 6.62 17.53L10.3 15.9L11.9 19.7C12.05 20.05 12.42 20.25 12.78 20.15C13.03 20.08 13.22 19.88 13.28 19.62L14.5 13.5L21.1 16.4C21.4 16.53 21.75 16.4 21.87 16.1C21.94 15.92 21.9 15.72 21.5 15.5Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+      </svg>
+      Global&nbsp;Emirates
+    </div>
+    <ul class="footer-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Global Emirates · www.global-emirates.com · A GCC future-intelligence studio.</div>
+  </div>
+</footer>
+
+<script>
+const MOONSHOT = [
+  {
+    id:'ops', ground:true,
+    name:'GCC Last-Mile CPO Rescue Practice',
+    tagline:'A fractional operations desk that walks into q-commerce, D2C, and 3PL clients and does exactly what you already do at scale: audit fleet mix, renegotiate 3PL contracts, cut CPO, and install simple cost tracking.',
+    theme:{ accent:'#2FA98F', deep:'#1C7A66', soft:'rgba(47,169,143,0.09)' },
+    setupMin:20000, setupMax:60000, roi:{bear:-5, base:60, bull:140}, reg:1, novelty:6,
+    plan:{ full:true,
+      brand:'Fulcrum Ops', tagline:'The leverage point between your fleet and your margin.',
+      vision:'Every merchant in the Gulf runs delivery operations as tight as the biggest players — without needing their headcount.',
+      mission:'We embed inside e-commerce and 3PL operations, cut cost-per-order within 90 days, and leave behind a system that keeps working after we walk out.',
+      heroStats:[ {v:'18\u201325%',l:'Typical CPO reduction in first 90 days'}, {v:'7',l:'GCC regions of direct operational experience'}, {v:'AED 20K',l:'Entry investment to license & launch'}, {v:'+60%',l:'Base-case 18-month ROI'} ],
+      pillars:[ {t:'Audit',d:'Full fleet, headcount and 3PL contract diagnostic within 2 weeks'}, {t:'Restructure',d:'Rebalance fleet mix, renegotiate vendor terms, right-size headcount'}, {t:'Install',d:'Lightweight CPO tracking clients can run without us'}, {t:'Sustain',d:'Performance-fee retainer tied to savings we actually deliver'} ],
+      market:{ demo:'GCC e-commerce, q-commerce and 3PL operators running 50–500 orders/day — too small for Big-4/enterprise consultancies, too complex to fix with spreadsheets alone.', opp:'UAE logistics sized at AED 120B+ ($32.8B) in 2026, heading toward $57.33B by 2035; last-mile specifically growing from $1.1B to $1.85B by 2030 in the UAE alone.', tam:'GCC SME/mid-market operational spend, ~$8–10B/yr', sam:'UAE+KSA mid-market ops-consulting spend, ~$150–250M', som:'10–15 clients, ~AED 420K revenue' },
+      pricing:[ {tier:'Diagnostic Sprint', price:'AED 15,000', unit:'flat / 2-week audit', features:'Fleet, headcount & 3PL contract diagnostic + written restructuring plan'}, {tier:'Restructuring Retainer', price:'AED 25,000', unit:'/month + 15% of savings', features:'6-month minimum, hands-on implementation, monthly performance review'}, {tier:'Fractional Ops Lead', price:'AED 40,000', unit:'/month', features:'Embedded part-time COO-level oversight across multiple sites'} ],
+      blueprint:{ legal:'Sharjah/RAK or mainland DED professional-services license.', physical:'Remote-first; occasional site visits; home or co-working office.', org:'Founder \u2192 Senior Ops Analyst (M9) \u2192 Junior Ops Analyst (M5).', partners:'3PL providers for negotiation leverage; POS/ERP vendors for tracking-tool integration.' },
+      personas:[ {name:'Rashid', role:'Operations Director, 40-store grocery delivery chain (Dubai/Sharjah)', init:'R', quote:'I need to cut delivery cost 20% without an internal ops team and without hurting SLAs.', pains:['Rising CPO with no internal team to fix it','Opaque 3PL cost breakdowns'], goals:['Cut CPO by 20% in 90 days','A tracking system his own team can run after']},
+        {name:'Fatima', role:'Co-founder, multi-city DTC beauty brand', init:'F', quote:'I\u2019m juggling three 3PLs with three different cost stories — I just want one clear picture.', pains:['3 different 3PL vendors, inconsistent CPO reporting'], goals:['One unified cost view','A renegotiated vendor mix']} ],
+      costs:{ setup:[ {item:'Free zone license & registration', cost:8000}, {item:'Laptop & tools', cost:6000}, {item:'Website & basic brand', cost:4000}, {item:'Legal / contract templates', cost:3000}, {item:'Working capital buffer', cost:20000} ],
+        opex:[ {item:'Coworking / office', cost:2500}, {item:'Analytics & tracking software', cost:1000}, {item:'Insurance', cost:500}, {item:'Marketing & BD', cost:2000}, {item:'Junior analyst (from Month 5)', cost:8000} ] },
+      revenue:{ y1:420000, y2:1350000, y3:2800000, monthly:[15,20,25,30,35,40,42,45,48,50,55,60], assumptions:'Ramp from 2 to 8+ concurrent clients across Year 1; Year 2–3 driven by retainer renewals, performance fees, and KSA expansion.' },
+      ops:{ flow:['Client Onboarding & NDA','Operational Audit','CPO Benchmark Model','Restructuring Plan','Hands-On Implementation','Tracking Install','Performance-Fee Reconciliation'],
+        staff:[ {m:'Month 1', r:'Founder, solo'}, {m:'Month 5', r:'+1 Junior Ops Analyst'}, {m:'Month 9', r:'+1 Senior Ops Analyst (KSA)'}, {m:'Month 12', r:'Evaluate +1 Client Success lead'} ] },
+      marketing:{ pre:['Warm outreach to existing regional ops/3PL network'], digital:['LinkedIn ads targeting Ops/Supply Chain Directors'], seasonal:['Ramadan and Q4 "CPO Readiness Audit" campaign'] },
+      risks:[ {r:'Client concentration (too few clients)', l:'Med', i:'High', m:'Pipeline 3x the client target; diversify across sectors.'},
+        {r:'Promised savings not achieved', l:'Med', i:'High', m:'Conservative diagnostic scoping; performance fee only after proof.'},
+        {r:'Key-person dependency', l:'High', i:'Med', m:'Codify the playbook early; hire an analyst by Month 5.'},
+        {r:'Client data confidentiality breach', l:'Low', i:'High', m:'Strict NDAs and secure-data-handling protocol.'},
+        {r:'Competitive response from consultancies', l:'Low', i:'Med', m:'Compete on price, speed and mid-market niche.'},
+        {r:'Slow retainer sales cycle', l:'Med', i:'Med', m:'Lead with the Diagnostic Sprint as a foot-in-door.'},
+        {r:'Margin compression on unproven fees', l:'Low', i:'Med', m:'Require baseline data-access before performance fee applies.'} ],
+      roadmap:[ {p:'Foundation', m:'Months 1\u20133', goals:['License filed, methodology built','2\u20133 clients via warm network']},
+        {p:'Proof', m:'Months 4\u20136', goals:['First restructuring implementations live','Convert to retainers; hire analyst']},
+        {p:'Scale', m:'Months 7\u20139', goals:['10+ active clients','Hire senior analyst; begin KSA outreach']},
+        {p:'Institutionalize', m:'Months 10\u201312', goals:['Performance-fee model matured','Playbook templated for a second team']} ],
+      ask:{ total:50000, note:'Self-fundable at the low end; AED 150,000 accelerates hiring and marketing.', uses:[ {label:'Working capital / runway', pct:50}, {label:'Hiring', pct:30}, {label:'Marketing & BD', pct:12}, {label:'Legal & licensing', pct:8} ] }
+    }
+  },
+  {
+    id:'agent',
+    name:'MENA Agent-Readiness Layer',
+    tagline:'Wiring Gulf merchants\u2019 catalogs, inventory and checkout into the AI shopping-agent protocols (ACP / UCP / AP2) that global giants already built \u2014 with fulfillment reliability as the edge.',
+    theme:{ accent:'#3E8FD0', deep:'#1D5A8C', soft:'rgba(62,143,208,0.09)' },
+    setupMin:80000, setupMax:180000, roi:{bear:-15, base:40, bull:120}, reg:3, novelty:8,
+    plan:{ full:true,
+      brand:'Merchant Mesh', tagline:'Making every Gulf merchant legible to the AI that shops for your customer.',
+      vision:'No Gulf merchant loses a sale because an AI agent couldn\u2019t understand their catalog.',
+      mission:'We plug regional merchants into the global agent-commerce rails already built by Visa, Google and Stripe — backed by fulfillment reliability data no global player has.',
+      heroStats:[ {v:'$57.33B',l:'UAE logistics market size by 2035'}, {v:'6',l:'Global agent-commerce protocols to integrate'}, {v:'AED 130K',l:'Average setup investment'}, {v:'+40%',l:'Base-case 18-month ROI'} ],
+      pillars:[ {t:'Normalize',d:'Clean and structure merchant catalog & inventory data'}, {t:'Connect',d:'Wire merchants into ACP/UCP/AP2 rails'}, {t:'Guarantee',d:'Fulfillment-SLA scoring so agents route to reliable merchants'}, {t:'Compound',d:'Build the region\u2019s first agent-order fulfillment benchmark dataset'} ],
+      market:{ demo:'5,000+ eligible GCC SME/mid-market retail, F&B and grocery merchants — most on legacy POS or WhatsApp catalogs.', opp:'Agentic commerce is scaling fast globally, but none of the giants are localizing onboarding for Arabic-market SMEs — that gap is the wedge.', tam:'Global agentic-commerce enablement software, multi-billion by 2030', sam:'GCC SME agent-readiness services, ~$300\u2013500M by 2028', som:'20 merchants, ~AED 900K revenue' },
+      pricing:[ {tier:'Starter', price:'AED 2,500', unit:'/month', features:'Catalog normalization + 1 protocol integration'}, {tier:'Growth', price:'AED 6,000', unit:'/month + 1% of routed value', features:'Multi-protocol integration + fulfillment SLA dashboard'}, {tier:'Enterprise', price:'Custom', unit:'annual contract', features:'White-label integration for regional chains and 3PLs'} ],
+      blueprint:{ legal:'Tech free zone license (DIC / DIFC Innovation Hub).', physical:'Small dev team, cloud infrastructure, no warehouse.', org:'Founder/product lead \u2192 2 engineers \u2192 merchant success manager (Month 6).', partners:'Sandbox agreements with Visa/Google/Stripe regional teams; 3PL data partners.' },
+      personas:[ {name:'Youssef', role:'Owner, 12-branch bakery & F&B chain, Dubai', init:'Y', quote:'I\u2019m losing orders to competitors AI shopping assistants already recommend.', pains:['No engineering resource to integrate anything'], goals:['Become orderable by AI agents with zero engineering lift']},
+        {name:'Noora', role:'Head of Digital, mid-size UAE grocery retailer', init:'N', quote:'I don\u2019t want to negotiate with six different protocols myself.', pains:['Multiple legacy systems, no unified inventory feed'], goals:['One integration layer instead of six']} ],
+      costs:{ setup:[ {item:'Tech free zone license', cost:15000}, {item:'Dev team, 3-month runway', cost:90000}, {item:'Cloud infra & sandbox fees', cost:8000}, {item:'Legal / integration agreements', cost:7000}, {item:'Brand & website', cost:6000} ],
+        opex:[ {item:'Engineering payroll', cost:35000}, {item:'Cloud hosting', cost:3000}, {item:'Merchant success (from Month 6)', cost:8000}, {item:'Sales / BD', cost:4000}, {item:'Office', cost:3000} ] },
+      revenue:{ y1:900000, y2:3200000, y3:7500000, monthly:[20,25,35,45,55,65,75,85,95,105,115,130], assumptions:'Merchant base and per-order fees compound as regional agent-commerce adoption accelerates.' },
+      ops:{ flow:['Merchant Onboarding & Catalog Audit','Data Normalization','Protocol Sandbox Integration','Fulfillment SLA Baseline','Production Go-Live','Agent-Order Monitoring','Monthly Optimization Review'],
+        staff:[ {m:'Month 1', r:'Founder + 1 engineer'}, {m:'Month 3', r:'+1 engineer'}, {m:'Month 6', r:'+Merchant success manager'}, {m:'Month 10', r:'+Sales lead'} ] },
+      marketing:{ pre:['Direct outreach to F&B/grocery chains'], digital:['LinkedIn + Google Ads targeting retail digital-transformation leads'], seasonal:['Pre-Ramadan and Q4 "agent-readiness audit" campaign'] },
+      risks:[ {r:'Global protocols change fast; integrations break', l:'High', i:'Med', m:'Modular adapter architecture; dedicated protocol-watch role.'},
+        {r:'Merchants distrust an "AI middleman"', l:'Med', i:'Med', m:'Transparent reporting; pilot-first, no-lock-in contracts.'},
+        {r:'Scope creep into payment processing', l:'Low', i:'High', m:'Never hold or settle funds; stay on existing rails.'},
+        {r:'Slow regional adoption', l:'Med', i:'Med', m:'Dual-use product — SLA dashboard valuable pre-agent-orders.'},
+        {r:'Global players localize directly', l:'Med', i:'High', m:'Build the fulfillment-reliability data moat fast.'},
+        {r:'Scarce niche integration talent', l:'Med', i:'Med', m:'Remote hiring; contractor bench.'},
+        {r:'Merchant data security breach', l:'Low', i:'High', m:'SOC2-aligned practices; encrypted data handling.'} ],
+      roadmap:[ {p:'Build', m:'Months 1\u20133', goals:['Normalizer built','3 pilot merchants signed']},
+        {p:'Prove', m:'Months 4\u20136', goals:['First live agent orders routed','10 more merchants onboarded']},
+        {p:'Expand', m:'Months 7\u20139', goals:['Multi-protocol support','25+ merchants']},
+        {p:'Institutionalize', m:'Months 10\u201312', goals:['Pricing formalized at scale','Seed round prepared']} ],
+      ask:{ total:180000, note:'Seed / friends-and-family round to fund the engineering runway through first production go-lives.', uses:[ {label:'Engineering payroll', pct:55}, {label:'Cloud & integration', pct:15}, {label:'Merchant success hire', pct:15}, {label:'Legal & licensing', pct:8}, {label:'Marketing', pct:7} ] }
+    }
+  },
+  {
+    id:'human',
+    name:'"Human-Made" Certification',
+    tagline:'A trusted, adversarially-verified mark proving a person\u2014not AI\u2014produced a piece of work.',
+    theme:{ accent:'#B08D2B', deep:'#7A6018', soft:'rgba(176,141,43,0.09)' },
+    setupMin:60000, setupMax:150000, roi:{bear:-20, base:25, bull:80}, reg:6, novelty:9,
+    plan:{ full:true,
+      brand:'Provenance Mark', tagline:'The mark that proves a human did this.',
+      vision:'In a world flooded with synthetic content, human effort becomes provable again.',
+      mission:'We build the adversarial verification standard that schools, employers and creative platforms trust to confirm a human — not AI — did the work.',
+      heroStats:[ {v:'9/10',l:'Novelty — first mover in verified-human certification'}, {v:'2',l:'Pilot institutions targeted in Year 1'}, {v:'AED 105K',l:'Average setup investment'}, {v:'+25%',l:'Base-case 18-month ROI'} ],
+      pillars:[ {t:'Capture',d:'Process/keystroke/provenance capture during the work itself'}, {t:'Adjudicate',d:'Human reviewer panel resolves disputed cases'}, {t:'Register',d:'Tamper-evident registry of every certified work'}, {t:'Verify',d:'Instant verifier API for employers, schools and platforms'} ],
+      market:{ demo:'KHDA/ADEK-regulated schools and universities, creative marketplaces, and corporate hiring teams across the UAE.', opp:'AI-generated content is now the norm, creating urgent institutional demand for a trust mark — and no dominant global standard has emerged yet.', tam:'Global content-authenticity & academic-integrity software, >$1B and growing', sam:'GCC private-education + hiring-assessment authenticity spend, ~$40\u201380M', som:'2 institutional pilots + 100 individual certifications, ~AED 260K revenue' },
+      pricing:[ {tier:'Individual Certification', price:'AED 150', unit:'per certified work', features:'Students, freelancers and creators'}, {tier:'Institutional License', price:'AED 60,000', unit:'/year per institution', features:'Unlimited certifications + integrity dashboard'}, {tier:'Enterprise Hiring Add-on', price:'AED 15,000', unit:'/month', features:'Employer-side verification integration'} ],
+      blueprint:{ legal:'Free zone license + certification-mark and trademark registration.', physical:'Small verification-tech team + part-time adjudication panel.', org:'Founder \u2192 1 engineer \u2192 2\u20133 part-time adjudicators.', partners:'KHDA/ADEK relationship-building; university pilot MOUs.' },
+      personas:[ {name:'Dr. Amina', role:'Dean of Academic Affairs, private Dubai university', init:'A', quote:'I can\u2019t tell anymore if coursework is AI-generated.', pains:['Rising AI-assisted academic integrity cases'], goals:['A trusted way to certify genuine student work']},
+        {name:'Karim', role:'Freelance illustrator, online marketplace', init:'K', quote:'Buyers keep asking if my art is AI or human.', pains:['Buyer distrust of authenticity'], goals:['A trusted badge that commands a premium']} ],
+      costs:{ setup:[ {item:'Free zone license & trademark filing', cost:12000}, {item:'Verification tech MVP build', cost:60000}, {item:'Adjudicator panel setup & training', cost:10000}, {item:'Legal (institutional MOU templates)', cost:8000}, {item:'Brand & website', cost:8000} ],
+        opex:[ {item:'Engineering', cost:18000}, {item:'Adjudicator panel', cost:6000}, {item:'BD / partnerships', cost:5000}, {item:'Office', cost:2500} ] },
+      revenue:{ y1:260000, y2:1100000, y3:2900000, monthly:[5,8,10,12,15,18,20,25,28,32,38,45], assumptions:'Revenue compounds as institutional licenses renew and recognition spreads to employers and marketplaces.' },
+      ops:{ flow:['Work Submission','Process/Provenance Capture','Automated Screening','Human Adjudication','Certification Issued','Registry Entry','Verifier API Query'],
+        staff:[ {m:'Month 1', r:'Founder + 1 engineer'}, {m:'Month 4', r:'+2 part-time adjudicators'}, {m:'Month 8', r:'+Institutional partnerships lead'} ] },
+      marketing:{ pre:['Direct relationship-building with university academic-integrity offices'], digital:['Content on "the AI integrity crisis"'], seasonal:['Back-to-school (Sept) and hiring-season (Q1) campaigns'] },
+      risks:[ {r:'Institutions slow to adopt a new standard', l:'High', i:'High', m:'Free pilot term to prove value before any paid license.'},
+        {r:'Verification method gamed', l:'Med', i:'High', m:'Multi-signal capture and continuous adversarial testing.'},
+        {r:'Disputed certifications create legal exposure', l:'Med', i:'High', m:'Clear appeals process; liability-limiting terms.'},
+        {r:'Low individual willingness-to-pay', l:'Med', i:'Med', m:'Institution-first model — individuals get scale through schools.'},
+        {r:'A larger player launches a competing standard', l:'Med', i:'High', m:'Move fast on regional institutional relationships as the moat.'},
+        {r:'Adjudicator panel bottleneck at scale', l:'Med', i:'Med', m:'Tiered automated + human review.'},
+        {r:'Privacy concerns over process-capture', l:'Low', i:'High', m:'Strict PDPL-compliant consent and minimal retention.'} ],
+      roadmap:[ {p:'Foundation', m:'Months 1\u20133', goals:['MVP verification tech built','2 pilot institutions signed']},
+        {p:'Proof', m:'Months 4\u20136', goals:['100+ works certified','First paid conversions']},
+        {p:'Recognition', m:'Months 7\u20139', goals:['1\u20132 employer/marketplace partnerships']},
+        {p:'Scale', m:'Months 10\u201312', goals:['First institutional renewals','Expand to 5+ institutions']} ],
+      ask:{ total:120000, note:'Seed funding to cover the MVP build and the free-pilot period before institutional revenue starts.', uses:[ {label:'Verification tech build', pct:45}, {label:'Adjudicator panel', pct:20}, {label:'Legal & trademark', pct:15}, {label:'Brand & partnerships', pct:20} ] }
+    }
+  },
+  {
+    id:'family',
+    name:'Family AI Governance Office',
+    tagline:'An audit-and-advisory service that reviews what a household\u2019s AI agents are actually doing and flags misalignment before it costs money or harms a child.',
+    theme:{ accent:'#8E86C9', deep:'#5B4FA0', soft:'rgba(142,134,201,0.09)' },
+    setupMin:40000, setupMax:100000, roi:{bear:-10, base:45, bull:100}, reg:2, novelty:9,
+    plan:{ full:true,
+      brand:'Kinwatch', tagline:'Someone should be watching what your family\u2019s AI is actually doing.',
+      vision:'Every family deploying AI agents has a human advisor making sure those agents serve the family, not the other way around.',
+      mission:'We audit, monitor and govern household AI agents — spending, tutoring, companionship — so families get the benefit without the blind spots.',
+      heroStats:[ {v:'AED 70K',l:'Average setup investment'}, {v:'+45%',l:'Base-case 18-month ROI'}, {v:'2/10',l:'Regulatory hurdle — lowest of the six concepts'}, {v:'10',l:'Founding pilot families targeted'} ],
+      pillars:[ {t:'Inventory',d:'Map every AI agent active in the household'}, {t:'Audit',d:'Score each agent for spend risk, alignment and child safety'}, {t:'Advise',d:'A human advisor reviews flags and recommends action'}, {t:'Monitor',d:'Ongoing dashboard and alerts, not a one-time report'} ],
+      market:{ demo:'Mass-affluent and HNW families in Dubai and Abu Dhabi with school-age children and multiple household AI subscriptions.', opp:'AI agent adoption in homes is accelerating faster than family oversight tools; no dedicated category yet exists.', tam:'Global family-office & family-advisory services, multi-billion', sam:'GCC mass-affluent AI-oversight services, ~$25\u201350M, nascent', som:'15 family subscriptions + 2 SME pilots, ~AED 340K revenue' },
+      pricing:[ {tier:'Family Essentials', price:'AED 1,500', unit:'/month', features:'Quarterly audit + basic dashboard'}, {tier:'Family Office Grade', price:'AED 6,000', unit:'/month', features:'Monthly audit, dedicated advisor, priority alerts'}, {tier:'SME Agent Audit', price:'AED 10,000 + AED 3,000/mo', unit:'setup + monitoring', features:'One-time audit plus ongoing monitoring'} ],
+      blueprint:{ legal:'Professional advisory license (mainland or free zone).', physical:'Remote-first, with occasional home visits.', org:'Founder / lead advisor \u2192 1 junior analyst (Month 4).', partners:'Wealth managers, private schools and family offices for referral.' },
+      personas:[ {name:'Layla', role:'Mother of 3, Dubai, 4+ household AI subscriptions', init:'L', quote:'I have no idea what these agents are actually deciding for my kids.', pains:['No visibility into household AI agent decisions'], goals:['Peace of mind and a plain-English monthly report']},
+        {name:'Omar', role:'Family office principal, extended multi-household family', init:'O', quote:'I need one dashboard and one advisor across the whole family group.', pains:['Multiple households, inconsistent AI oversight'], goals:['Consolidated oversight across all family households']} ],
+      costs:{ setup:[ {item:'License', cost:8000}, {item:'Dashboard MVP build', cost:35000}, {item:'Advisor framework & training', cost:10000}, {item:'Brand & website', cost:7000}, {item:'Legal / consent templates', cost:5000} ],
+        opex:[ {item:'Advisor time / payroll', cost:12000}, {item:'Dashboard hosting', cost:1500}, {item:'BD / partnerships', cost:4000}, {item:'Office', cost:2000} ] },
+      revenue:{ y1:340000, y2:1050000, y3:2400000, monthly:[8,10,14,18,22,26,28,30,34,38,42,50], assumptions:'Subscription growth from mass-affluent families plus a family-office-grade tier.' },
+      ops:{ flow:['Household Onboarding & Consent','Agent Inventory Scan','Risk & Alignment Audit','Advisor Review','Family Report','Ongoing Monitoring','Quarterly Reassessment'],
+        staff:[ {m:'Month 1', r:'Founder, solo'}, {m:'Month 4', r:'+1 junior analyst'}, {m:'Month 8', r:'+1 advisor'}, {m:'Month 12', r:'+Partnerships lead'} ] },
+      marketing:{ pre:['Warm introductions via private banking contacts'], digital:['Content on "AI parenting risks"'], seasonal:['Back-to-school and New Year "digital household reset" campaigns'] },
+      risks:[ {r:'Perceived as surveillance or invasive', l:'Med', i:'High', m:'Family-controlled consent; transparent reporting.'},
+        {r:'Low awareness of the problem', l:'High', i:'Med', m:'Education-led marketing; free initial audit.'},
+        {r:'Advisor quality/consistency at scale', l:'Med', i:'Med', m:'Standardized audit framework and training.'},
+        {r:'Competing with "free" advice', l:'Med', i:'Low', m:'Position as professional, liability-aware oversight.'},
+        {r:'Scope creep into regulated advice', l:'Low', i:'High', m:'Strict service boundaries; refer out on financial/legal matters.'},
+        {r:'Slow HNW sales cycles', l:'Med', i:'Med', m:'Parallel mass-affluent subscription tier.'},
+        {r:'Data access / privacy risk', l:'Low', i:'High', m:'Minimal necessary access; PDPL alignment.'} ],
+      roadmap:[ {p:'Foundation', m:'Months 1\u20133', goals:['Audit framework built','10 pilot families onboarded']},
+        {p:'Launch', m:'Months 4\u20136', goals:['Subscription dashboard live','Junior analyst hired']},
+        {p:'Partner', m:'Months 7\u20139', goals:['Wealth manager partnership signed','SME audit pilot launched']},
+        {p:'Formalize', m:'Months 10\u201312', goals:['30+ paying families','Family-office tier formalized']} ],
+      ask:{ total:90000, note:'Covers MVP dashboard build, advisor framework, and runway through the first paying cohort.', uses:[ {label:'Dashboard MVP build', pct:40}, {label:'Advisor framework', pct:20}, {label:'Legal & consent templates', pct:15}, {label:'Brand & BD', pct:25} ] }
+    }
+  },
+  {
+    id:'data',
+    name:'Childhood Digital Data Trust',
+    tagline:'A custodial trust that holds a child\u2019s data trail in their name, giving them ownership and control the moment they come of age.',
+    theme:{ accent:'#C97B84', deep:'#8E4A54', soft:'rgba(201,123,132,0.09)' },
+    setupMin:150000, setupMax:300000, roi:{bear:-30, base:20, bull:70}, reg:8, novelty:9,
+    plan:{ full:true,
+      brand:'Custodia', tagline:'Every child\u2019s data, held in trust until they\u2019re old enough to claim it.',
+      vision:'No child\u2019s digital footprint should be owned by anyone but that child.',
+      mission:'We hold a child\u2019s data trail in a regulated custodial trust, giving parents control today and the child ownership at 18.',
+      heroStats:[ {v:'AED 225K',l:'Average setup investment'}, {v:'8/10',l:'Highest regulatory hurdle of the six concepts'}, {v:'+20%',l:'Base-case 18-month ROI'}, {v:'50',l:'Founding families for pilot cohort'} ],
+      pillars:[ {t:'Ingest',d:'Connect data trails from apps, devices and schools with consent'}, {t:'Custody',d:'Hold data in a regulated DIFC/ADGM trust structure'}, {t:'Control',d:'Parents manage access until the child comes of age'}, {t:'Transfer',d:'Age-gated handover of full ownership at 18'} ],
+      market:{ demo:'Nurseries, private schools and tech-forward parents in Dubai and Abu Dhabi.', opp:'Children generate a data trail from birth with zero consent or ownership mechanism — a structural gap that matters more every year.', tam:'Nascent global "personal data trust" category, growing alongside data-rights regulation', sam:'GCC private-education-linked custodial data services, ~$15\u201330M', som:'2 nursery/school partnerships, 50 enrolled families, ~AED 130K revenue' },
+      pricing:[ {tier:'Family Custody Plan', price:'AED 200', unit:'/month per child', features:'Data vault + parent dashboard'}, {tier:'School Partnership Bundle', price:'AED 25,000', unit:'/year per institution', features:'Enrollment integration + reporting'}, {tier:'Legacy Transfer Service', price:'AED 500', unit:'one-time, at age 18', features:'Formal ownership handover process'} ],
+      blueprint:{ legal:'DIFC or ADGM common-law trust vehicle + full PDPL compliance program.', physical:'Secure cloud infrastructure; a registered office.', org:'Founder \u2192 retained legal counsel \u2192 1 engineer \u2192 partnerships lead (Month 6).', partners:'Nurseries and schools; UAE Data Office engagement.' },
+      personas:[ {name:'Sara', role:'Mother of a 4-year-old, Abu Dhabi', init:'S', quote:'I have no idea what my child\u2019s apps and devices are collecting.', pains:['No visibility or ownership over data trail'], goals:['A structure that protects and eventually benefits her child']},
+        {name:'Nursery Director', role:'Runs a 200-child private nursery, Dubai', init:'N', quote:'Parents keep asking about our data practices.', pains:['Rising parent scrutiny of data handling'], goals:['A trusted custodial option as an enrollment feature']} ],
+      costs:{ setup:[ {item:'DIFC/ADGM trust legal structuring', cost:90000}, {item:'PDPL compliance program', cost:40000}, {item:'Data vault MVP build', cost:60000}, {item:'Partnership development', cost:15000}, {item:'Brand & website', cost:10000}, {item:'Regulatory engagement reserve', cost:20000} ],
+        opex:[ {item:'Legal / compliance retainer', cost:15000}, {item:'Engineering', cost:12000}, {item:'Partnerships lead (Month 6)', cost:8000}, {item:'Hosting & security', cost:3000} ] },
+      revenue:{ y1:130000, y2:620000, y3:1800000, monthly:[0,0,2,5,8,10,12,15,18,20,20,20], assumptions:'Revenue starts after legal trust structuring completes (~Month 3); Year 2–3 compound through additional school partnerships.' },
+      ops:{ flow:['Legal Trust Structuring','PDPL Compliance Build','Nursery/School Partnership','Family Enrollment & Consent','Data Ingestion & Vaulting','Parent Dashboard','Age-Gated Transfer at 18'],
+        staff:[ {m:'Months 1\u20133', r:'Founder + retained legal counsel'}, {m:'Month 4', r:'+1 engineer'}, {m:'Month 6', r:'+1 partnerships lead'}, {m:'Month 12', r:'Evaluate +1 compliance officer'} ] },
+      marketing:{ pre:['Relationship-building with nursery/school directors'], digital:['Content on "children\u2019s data rights"'], seasonal:['School-enrollment season partnership campaigns'] },
+      risks:[ {r:'Regulatory approval delays', l:'High', i:'High', m:'Engage DIFC/ADGM and the Data Office early.'},
+        {r:'Low parent awareness', l:'Med', i:'Med', m:'Partner through trusted nurseries first.'},
+        {r:'Data breach risk (minor data)', l:'Low', i:'High', m:'Best-in-class encryption, minimal retention.'},
+        {r:'Trust-structure legal costs exceed budget', l:'Med', i:'High', m:'Phase legal work; start with a simpler consent ledger.'},
+        {r:'School partners hesitant over liability', l:'Med', i:'Med', m:'Clear indemnification and insurance in agreements.'},
+        {r:'Slow revenue ramp threatens runway', l:'High', i:'High', m:'Keep the team lean until first 2 partnerships signed.'},
+        {r:'18-year promise hard to prove trustworthy early', l:'Med', i:'Med', m:'Transparent governance, third-party audits.'} ],
+      roadmap:[ {p:'Legal Foundation', m:'Months 1\u20133', goals:['Trust structuring underway','1 nursery MOU signed']},
+        {p:'Pilot', m:'Months 4\u20136', goals:['Data vault MVP live','First 20 families enrolled']},
+        {p:'Expand', m:'Months 7\u20139', goals:['2nd school partnership','50 families enrolled']},
+        {p:'Institutionalize', m:'Months 10\u201312', goals:['Model formalized','Telco/edtech conversations opened']} ],
+      ask:{ total:260000, note:'Covers the full legal/trust structuring runway before the product can legally hold data.', uses:[ {label:'Legal & trust structuring', pct:40}, {label:'PDPL compliance', pct:18}, {label:'Data vault build', pct:25}, {label:'Partnerships & brand', pct:17} ] }
+    }
+  },
+  {
+    id:'skill',
+    name:'Verified-Skill Hiring Infrastructure',
+    tagline:'Real, proctored, work-sample assessments that let employers hire on proven capability instead of a degree.',
+    theme:{ accent:'#5B6EE1', deep:'#33418F', soft:'rgba(91,110,225,0.09)' },
+    setupMin:120000, setupMax:250000, roi:{bear:-15, base:50, bull:150}, reg:4, novelty:8,
+    plan:{ full:true,
+      brand:'ProofWork', tagline:'Hire on proven skill, not paper.',
+      vision:'No capable person is locked out of a job because they don\u2019t have the right degree.',
+      mission:'We build real, proctored, work-sample assessments that let employers hire on demonstrated skill.',
+      heroStats:[ {v:'AED 185K',l:'Average setup investment'}, {v:'+50%',l:'Base-case 18-month ROI — highest of the six'}, {v:'+150%',l:'Bull-case 18-month ROI'}, {v:'3',l:'Anchor employers targeted before public launch'} ],
+      pillars:[ {t:'Assess',d:'Real, sandboxed work tasks — not multiple-choice tests'}, {t:'Verify',d:'Proctored, tamper-evident integrity layer'}, {t:'Match',d:'Direct placement pipeline to committed anchor employers'}, {t:'Compound',d:'Post-hire performance feeds back into candidate credibility'} ],
+      market:{ demo:'Entry-to-mid-level tech, finance and operations talent across the GCC.', opp:'Employers are frustrated by degree-based hiring, and the UAE\u2019s skills-based-hiring push creates unusual government tailwind.', tam:'Global skills-based hiring market, multi-billion and growing fast', sam:'GCC verified-skill assessment and placement services, ~$100\u2013200M', som:'3 anchor employers, 50 verified placements, ~AED 520K revenue' },
+      pricing:[ {tier:'Candidate Assessment Fee', price:'AED 300', unit:'per candidate', features:'Paid by employer or candidate depending on channel'}, {tier:'Employer Placement Fee', price:'12%', unit:'of first-year salary', features:'Charged only on a successful verified hire'}, {tier:'Employer Subscription', price:'AED 8,000', unit:'/month', features:'Unlimited assessment access + dedicated pipeline'} ],
+      blueprint:{ legal:'MOHRE recruitment/placement license + a tech free zone entity.', physical:'Remote-first delivery, occasional proctoring partnerships.', org:'Founder \u2192 assessment-design lead \u2192 1 engineer \u2192 employer-partnerships lead (Month 4).', partners:'Anchor employers with committed hiring intent; proctoring vendors.' },
+      personas:[ {name:'Hana', role:'Self-taught developer, no CS degree', init:'H', quote:'I keep getting filtered out despite a strong portfolio.', pains:['Filtered out before anyone sees her actual work'], goals:['A credible way to prove she can do the job']},
+        {name:'Tariq', role:'Head of Engineering, Dubai fintech', init:'T', quote:'Degree-filtered candidates often underperform.', pains:['Resume screening doesn\u2019t predict performance'], goals:['Hire off verified real-task performance']} ],
+      costs:{ setup:[ {item:'MOHRE licensing + free zone entity', cost:25000}, {item:'Assessment platform MVP', cost:100000}, {item:'Anchor employer agreements', cost:15000}, {item:'Brand & website', cost:10000}, {item:'Working capital buffer', cost:25000} ],
+        opex:[ {item:'Engineering', cost:25000}, {item:'Assessment design lead', cost:15000}, {item:'Employer partnerships (Month 4)', cost:10000}, {item:'Proctoring / tech licensing', cost:4000}, {item:'Office', cost:3000} ] },
+      revenue:{ y1:520000, y2:2100000, y3:5200000, monthly:[5,10,15,25,35,45,55,60,65,70,65,70], assumptions:'Placement fees plus subscription revenue compound as employer trust builds.' },
+      ops:{ flow:['Employer Anchor Agreement','Assessment Design','Candidate Sourcing','Proctored Assessment','Verification & Scoring','Employer Matching','Post-Hire Tracking'],
+        staff:[ {m:'Month 1', r:'Founder + assessment-design lead'}, {m:'Month 2', r:'+1 engineer'}, {m:'Month 4', r:'+Employer-partnerships lead'}, {m:'Month 9', r:'+Candidate success manager'} ] },
+      marketing:{ pre:['Relationship-building with 3 anchor employers'], digital:['LinkedIn campaigns targeting self-taught/bootcamp talent'], seasonal:['Graduate season and new-fiscal-year hiring campaigns'] },
+      risks:[ {r:'Employers slow to trust a new signal', l:'High', i:'High', m:'Start with pre-committed anchor employers.'},
+        {r:'Assessment gaming or cheating', l:'Med', i:'High', m:'Proctoring plus real-task design; adversarial review.'},
+        {r:'MOHRE licensing complexity', l:'Med', i:'Med', m:'Engage a recruitment-licensing consultant early.'},
+        {r:'High candidate acquisition cost', l:'Med', i:'Med', m:'Partner with bootcamps for warm pipelines.'},
+        {r:'Sector-specific design is resource-intensive', l:'Med', i:'Med', m:'Start with one sector; template the process.'},
+        {r:'Placement-fee revenue is lumpy', l:'Med', i:'Med', m:'Blend with subscription revenue.'},
+        {r:'Reputational risk from a bad hire', l:'Low', i:'High', m:'Post-hire feedback loop recalibrates accuracy.'} ],
+      roadmap:[ {p:'Design', m:'Months 1\u20133', goals:['Sector-1 assessment designed','3 anchor employers signed']},
+        {p:'Pilot', m:'Months 4\u20136', goals:['First cohort of 30\u201350 assessed and placed']},
+        {p:'Expand', m:'Months 7\u20139', goals:['Sector 2 launched','Anchors converted to subscription']},
+        {p:'Scale', m:'Months 10\u201312', goals:['100+ verified placements','Seed round prepared']} ],
+      ask:{ total:200000, note:'Funds the assessment platform build and anchor-employer runway.', uses:[ {label:'Platform build', pct:45}, {label:'Assessment design', pct:20}, {label:'MOHRE licensing & legal', pct:12}, {label:'Partnerships & marketing', pct:23} ] }
+    }
+  }
+];
+
+const NEXUM = [
+  {
+    id:'veritas',
+    name:'Personal Likeness Rights Registry',
+    tagline:'A registry that lets every voice and face collect royalties instead of losing control of them to AI.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:90000, setupMax:190000, roi:{bear:-20, base:35, bull:100}, reg:5, novelty:9,
+    plan:{ full:false,
+      brand:'Veritas Ledger', tagline:'The registry that lets your likeness collect royalties instead of losing control.',
+      vision:'A world where every synthetic use of a person\u2019s voice or face flows back to them, verified and paid.',
+      mission:'We register, license, monitor and enforce personal likeness rights — starting with GCC creators and executives — before global platforms set the standard for us.',
+      heroStats:[ {v:'9/10',l:'Novelty — first-mover likeness registry in the region'}, {v:'AED 140K',l:'Average setup investment'}, {v:'+35%',l:'Base-case 18-month ROI'}, {v:'0',l:'Direct regional competitors identified'} ],
+      pillars:[ {t:'Register',d:'A verified record of a person\u2019s voice, face and likeness'}, {t:'License',d:'Controlled terms for any AI or media use of that likeness'}, {t:'Monitor',d:'Ongoing detection of unauthorized synthetic use'}, {t:'Enforce',d:'Royalty collection and takedown pathways when terms are breached'} ],
+      market:{ demo:'GCC creators, executives, athletes and media personalities exposed to voice-cloning and AI-avatar risk.', opp:'Voice and likeness cloning is now trivial to produce and nearly impossible to police — and no regional registry or enforcement layer exists yet.', tam:'Global personal-likeness & synthetic-media rights management, emerging multi-billion category', sam:'GCC creator and executive likeness-rights services, ~$20\u201340M early', som:'50 registered individuals + 2 agency partnerships in Year 1' }
+    }
+  },
+  {
+    id:'longview',
+    name:'Multi-Generational Family Governance & Housing',
+    tagline:'Governance and homes built for families who will span six living generations as longevity extends the family tree.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:100000, setupMax:220000, roi:{bear:-15, base:30, bull:90}, reg:5, novelty:8,
+    plan:{ full:false,
+      brand:'Longview Estates', tagline:'Governance and homes for families that no longer fit a three-generation plan.',
+      vision:'No family outgrows its own governance as longevity stretches the family tree past anything the law — or the floor plan — was built for.',
+      mission:'We advise multi-generational GCC families on governance structures, and pair it with purpose-built multi-generational residential concepts.',
+      heroStats:[ {v:'8/10',l:'Novelty — no dedicated multi-gen governance advisory in the GCC'}, {v:'AED 160K',l:'Average setup investment'}, {v:'+30%',l:'Base-case 18-month ROI'}, {v:'4\u20136',l:'Living generations a single family plan must now govern'} ],
+      pillars:[ {t:'Govern',d:'Family charters and succession structures built for a 60-year horizon'}, {t:'Advise',d:'Inheritance and role planning across overlapping generations'}, {t:'Design',d:'Multi-generational residential concepts, not retrofit floor plans'}, {t:'Sustain',d:'Ongoing family-council facilitation as the structure evolves'} ],
+      market:{ demo:'HNW and multi-branch GCC families whose living generations are starting to overlap by decades, not years.', opp:'Longevity is quietly breaking the 30-year inheritance and housing assumptions every family structure was built on.', tam:'Global family-office governance and multi-gen real estate, multi-billion', sam:'GCC multi-generational family advisory and real estate concepts, ~$50\u201380M', som:'3 founding family mandates in Year 1' }
+    }
+  },
+  {
+    id:'terra',
+    name:'Screen-Free Human-Skills Academies',
+    tagline:'Screen-free, AI-free skills academies teaching trade, negotiation, risk and boredom tolerance — delivered like a premium hospitality brand.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:70000, setupMax:160000, roi:{bear:-10, base:40, bull:95}, reg:3, novelty:7,
+    plan:{ full:false,
+      brand:'Terra Skills', tagline:'A real childhood, delivered as a deliberate, premium choice.',
+      vision:'Every Gen Alpha and Beta child gets an unmediated childhood — negotiation, risk, boredom, real skill — as a deliberate choice, not an accident.',
+      mission:'We run screen-free, AI-free academies and camps teaching hands-on trade and life skills, franchisable across the GCC.',
+      heroStats:[ {v:'7/10',l:'Novelty — the premium version of an old idea, built for this generation'}, {v:'AED 115K',l:'Average setup investment'}, {v:'+40%',l:'Base-case 18-month ROI'}, {v:'0',l:'Screens or AI tools used on-site'} ],
+      pillars:[ {t:'Build',d:'Real trade and craft skills — building, repairing, growing'}, {t:'Negotiate',d:'Unmediated peer interaction and conflict resolution'}, {t:'Risk',d:'Age-appropriate real risk assessment, not simulated'}, {t:'Franchise',d:'A repeatable, brandable academy model across GCC cities'} ],
+      market:{ demo:'Affluent, safety-conscious GCC parents seeking a deliberate counterweight to AI-mediated childhood.', opp:'The predictable backlash to infinitely-personalized AI childhoods is a premium market for the unmediated alternative.', tam:'Global premium youth-enrichment and camps market, multi-billion', sam:'GCC premium screen-free youth programs, ~$60\u201390M', som:'2 pilot academy locations, 150 enrolled children in Year 1' }
+    }
+  },
+  {
+    id:'atlas',
+    name:'Robot Labor Financing & Insurance Infrastructure',
+    tagline:'Pre-building the leasing, insurance and fleet-management rails for a commercial robot labor force that hasn\u2019t arrived yet.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:150000, setupMax:300000, roi:{bear:-25, base:25, bull:110}, reg:6, novelty:9,
+    plan:{ full:false,
+      brand:'Atlas Robotics Capital', tagline:'Leasing and insuring the labor force that hasn\u2019t arrived yet — before it does.',
+      vision:'When humanoid and service robots hit price parity, the region that already built the financing and insurance rails owns the category.',
+      mission:'We pre-build leasing, insurance and fleet-management infrastructure for commercial service robots entering hospitality, retail and logistics.',
+      heroStats:[ {v:'9/10',l:'Novelty — no dedicated robot financing/insurance layer exists yet'}, {v:'AED 225K',l:'Average setup investment'}, {v:'+25%',l:'Base-case 18-month ROI'}, {v:'6/10',l:'Regulatory hurdle — insurance product design and licensing'} ],
+      pillars:[ {t:'Finance',d:'Leasing structures for commercial service robots'}, {t:'Insure',d:'Uptime and liability insurance products built for robot fleets'}, {t:'Manage',d:'Fleet monitoring and resale-value tracking'}, {t:'Position',d:'First-mover regional infrastructure ahead of robot price parity'} ],
+      market:{ demo:'Hospitality, retail and logistics operators piloting service and humanoid robots across the UAE.', opp:'The UAE\u2019s active robotics and AI-infrastructure push creates unusual government tailwind ahead of global robot price parity.', tam:'Global robot financing and insurance infrastructure, emerging multi-billion category by early 2030s', sam:'GCC commercial robot financing and insurance, ~$30\u201360M pre-parity, scaling fast after', som:'2 pilot leasing/insurance partnerships with hospitality or retail operators in Year 1' }
+    }
+  },
+  {
+    id:'stationery',
+    name:'Branded School Stationery Line',
+    tagline:'A branded alternative to the unbranded stationery UAE students currently buy, sourced from India and China.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:40000, setupMax:100000, roi:{bear:-15, base:25, bull:65}, reg:2, novelty:4,
+    plan:{ full:false,
+      brand:'Qalam &amp; Co', tagline:'The stationery brand UAE school bags are missing.',
+      vision:'Every UAE student carries stationery from a brand built for them, not just whatever the nearest shop stocked.',
+      mission:'We identify the fastest-moving school stationery SKUs, source them from trusted India/China vendors, and build the first real UAE-native stationery brand around them.',
+      heroStats:[ {v:'4/10',l:'Novelty — branding an unbranded category'}, {v:'AED 70K',l:'Average setup investment'}, {v:'+25%',l:'Base-case 18-month ROI'}, {v:'0',l:'Dedicated branded competitors identified locally'} ],
+      pillars:[ {t:'Identify',d:'Find the highest-volume, fastest-moving stationery SKUs'}, {t:'Source',d:'Vendor relationships across India and China'}, {t:'Brand',d:'Build the category\u2019s first real UAE-native brand identity'}, {t:'Distribute',d:'School-adjacent retail and online distribution'} ],
+      market:{ demo:'UAE school students and parents currently buying unbranded stationery.', opp:'There is no branded stationery player in the UAE school-supplies category despite consistent, recurring demand.', tam:'UAE and GCC school-supplies retail market', sam:'Branded stationery opportunity within fast-moving school SKUs', som:'Initial SKU range launched through 2\u20133 distribution channels in Year 1' }
+    }
+  },
+  {
+    id:'sciencekits',
+    name:'DIY School Experiment Kits',
+    tagline:'Custom, curriculum-aligned experiment kits solving the lack of quality lab setups in UAE schools.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:50000, setupMax:120000, roi:{bear:-15, base:22, bull:60}, reg:3, novelty:5,
+    plan:{ full:false,
+      brand:'Tajriba Kits', tagline:'Real experiments, without a real lab.',
+      vision:'No UAE classroom is limited by its lab equipment budget.',
+      mission:'We design and supply DIY experiment kits with guided instructions, tied to school curricula, sourced affordably from India and China and sold direct to schools.',
+      heroStats:[ {v:'5/10',l:'Novelty — curriculum-tied DIY kit model is underused locally'}, {v:'AED 85K',l:'Average setup investment'}, {v:'+22%',l:'Base-case 18-month ROI'}, {v:'B2B',l:'Sold direct to schools, not individual parents'} ],
+      pillars:[ {t:'Design',d:'Curriculum-aligned experiment kits with clear DIY guidelines'}, {t:'Source',d:'Affordable component sourcing from India and China'}, {t:'Partner',d:'Direct tie-ups with UAE schools'}, {t:'Repeat',d:'Termly/annual kit refresh contracts'} ],
+      market:{ demo:'UAE private and public schools lacking well-equipped science labs.', opp:'Schools want hands-on STEM experience but face real budget and equipment constraints.', tam:'UAE and GCC K-12 STEM supplies market', sam:'Schools open to a DIY kit model as a lab-equipment alternative', som:'2\u20133 school partnerships in Year 1' }
+    }
+  },
+  {
+    id:'spacebook',
+    name:'School Facility Rental Marketplace',
+    tagline:'A marketplace renting out school playgrounds, auditoriums and halls to the public after hours and on weekends.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:60000, setupMax:140000, roi:{bear:-20, base:28, bull:70}, reg:4, novelty:6,
+    plan:{ full:false,
+      brand:'Sahat', tagline:'Every school has a playground sitting empty on weekends. We rent it out.',
+      vision:'Idle school infrastructure across the UAE becomes usable community space instead of an empty asset.',
+      mission:'We build a marketplace connecting schools\u2019 playgrounds, auditoriums and halls to the public for hourly or weekend rental, post-school-hours.',
+      heroStats:[ {v:'6/10',l:'Novelty — no dedicated school-facility marketplace exists locally'}, {v:'AED 100K',l:'Average setup investment'}, {v:'+28%',l:'Base-case 18-month ROI'}, {v:'4/10',l:'Regulatory hurdle — school liability and insurance agreements'} ],
+      pillars:[ {t:'List',d:'Onboard school facilities as bookable venues'}, {t:'Book',d:'Hourly and weekend booking for the general public'}, {t:'Insure',d:'Liability and insurance frameworks schools can trust'}, {t:'Split',d:'Revenue-share model schools have an incentive to join'} ],
+      market:{ demo:'UAE schools with underused playgrounds, auditoriums and halls; the public seeking affordable event and activity space.', opp:'Space-rental marketplaces exist for other venue types, but school facilities remain a largely untapped, idle asset class.', tam:'UAE venue and space-rental market', sam:'School-facility rental specifically, across private and semi-private schools', som:'5\u201310 school partnerships live in Year 1' }
+    }
+  },
+  {
+    id:'preplymena',
+    name:'Tutor & Instructor Marketplace',
+    tagline:'A marketplace for tutors and instructors, starting with curriculum subjects and expanding into vocational and wellness classes.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:50000, setupMax:130000, roi:{bear:-15, base:30, bull:75}, reg:2, novelty:5,
+    plan:{ full:false,
+      brand:'Mudarris', tagline:'From curriculum tutoring to life skills, one marketplace.',
+      vision:'Every student and adult in the GCC finds the right tutor or instructor in minutes, not through word of mouth.',
+      mission:'We start with curriculum-aligned student tutoring, then expand into vocational skills (swimming, dance) and adult wellness (meditation, yoga, mental health).',
+      heroStats:[ {v:'5/10',l:'Novelty — global tutoring marketplaces exist, GCC-native ones are thin'}, {v:'AED 90K',l:'Average setup investment'}, {v:'+30%',l:'Base-case 18-month ROI'}, {v:'2-sided',l:'Marketplace model — tutors and learners both onboarded'} ],
+      pillars:[ {t:'Match',d:'Students and tutors matched by subject and curriculum'}, {t:'Expand',d:'Vocational and skill-based classes as a second wave'}, {t:'Widen',d:'Adult wellness — meditation, yoga, mental health — as a third wave'}, {t:'Trust',d:'Vetting and review systems learners can rely on'} ],
+      market:{ demo:'GCC students needing curriculum tutoring, later expanding to adults seeking skills and wellness classes.', opp:'Global platforms like Preply serve general tutoring, but a GCC-curriculum-first, then wellness-expanded marketplace is not well served locally.', tam:'GCC private tutoring and adult-education market', sam:'Curriculum tutoring plus vocational and wellness classes, GCC-wide', som:'500+ active tutor-learner matches in Year 1' }
+    }
+  },
+  {
+    id:'minimalwear',
+    name:'Minimalist Basic-Wear Brand',
+    tagline:'A trust-first, minimalist basics clothing brand sourced from India and Bangladesh, starting with menswear.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:60000, setupMax:150000, roi:{bear:-20, base:25, bull:70}, reg:2, novelty:4,
+    plan:{ full:false,
+      brand:'Bare Basics', tagline:'Basics done properly, not fast fashion done cheaply.',
+      vision:'The GCC gets a basics brand built on trust and quality, not the volume-and-speed model of Shein or Temu.',
+      mission:'We launch a minimalist, low-SKU basics clothing brand — starting with menswear, where design complexity is lowest and trust is the biggest gap versus fast-fashion marketplaces.',
+      heroStats:[ {v:'4/10',l:'Novelty — crowded category, trust-led positioning is the edge'}, {v:'AED 105K',l:'Average setup investment'}, {v:'+25%',l:'Base-case 18-month ROI'}, {v:'Men\u2019s wear',l:'Initial focus — lowest SKU complexity, least design-heavy'} ],
+      pillars:[ {t:'Curate',d:'A tight, minimalist SKU range instead of fast-fashion volume'}, {t:'Source',d:'Vendor relationships across India and Bangladesh'}, {t:'Trust',d:'Quality and consistency as the core brand promise'}, {t:'Distribute',d:'Own website plus regional marketplaces, with delivery and payment partners'} ],
+      market:{ demo:'GCC consumers wary of fast-fashion marketplace quality and trust issues.', opp:'Shein and Temu dominate on price and volume but lack trust; a minimalist, quality-first basics brand is a clear gap, especially in men\u2019s wear.', tam:'GCC online basics and casualwear market', sam:'Trust-led minimalist basics, menswear-first', som:'Initial SKU range live on 1 marketplace + own site in Year 1' }
+    }
+  },
+  {
+    id:'devbench',
+    name:'On-Demand SME IT Development Bench',
+    tagline:'A lean, freelancer-powered IT development bench solving the small-scale software gaps UAE companies usually outsource badly.',
+    theme:{ accent:'#7B5FE0', deep:'#4F3CA0', soft:'rgba(123,95,224,0.09)' },
+    setupMin:30000, setupMax:80000, roi:{bear:-10, base:35, bull:80}, reg:1, novelty:4,
+    plan:{ full:false,
+      brand:'Bench&amp;Build', tagline:'The small IT jobs your vendor never prioritizes, finally handled properly.',
+      vision:'No UAE SME waits weeks for a barcode app or attendance system a freelancer bench could ship in days.',
+      mission:'We run a lean core team plus a network of India-based freelancers on fixed contracts to deliver small-scale IT solutions — barcode apps, scan-and-search tools, attendance systems — for UAE SMEs.',
+      heroStats:[ {v:'4/10',l:'Novelty — the model is simple, the execution gap is the opportunity'}, {v:'AED 55K',l:'Average setup investment'}, {v:'+35%',l:'Base-case 18-month ROI'}, {v:'1/10',l:'Regulatory hurdle — standard services licensing only'} ],
+      pillars:[ {t:'Bench',d:'A standing freelancer network on fixed contracts, not project-by-project hiring'}, {t:'Deliver',d:'Small-scale, fast-turnaround IT solutions'}, {t:'Relate',d:'Direct client relationships UAE SMEs currently lack with vendors'}, {t:'Retain',d:'Ongoing small-contract retainers instead of one-off projects'} ],
+      market:{ demo:'UAE SMEs relying on vendors for small IT builds like barcode printing, scan-and-search, or attendance management.', opp:'Most UAE SMEs are underserved by vendors for exactly this scale of work, and building direct relationships takes time but is not being done systematically by anyone.', tam:'UAE SME small-scale software and IT services market', sam:'SMEs currently unserved or underserved by existing IT vendors', som:'8\u201312 SME clients on retainer in Year 1' }
+    }
+  }
+];
+
+const EDGE = [
+  {
+    id:'aquarina',
+    name:'Aquaponic Shrimp Farming (RAS)',
+    tagline:'A recirculating aquaculture system farm bringing fresh, traceable shrimp to a region that imports over 13,000 tonnes of it a year.',
+    theme:{ accent:'#1C8C6E', deep:'#0F5C47', soft:'rgba(28,140,110,0.09)' },
+    setupMin:8000000, setupMax:10500000, roi:{bear:-30, base:15, bull:50}, reg:6, novelty:6,
+    plan:{ full:true,
+      brand:'Aquarina BlueHarvest', tagline:'Fresh, sustainable shrimp — grown in the UAE, not flown in frozen.',
+      vision:'The UAE\u2019s seafood plate stops depending on imports — Dubai alone brings in over 13,000 MT of shrimp a year.',
+      mission:'We operate a recirculating aquaculture system (RAS) shrimp farm in the UAE, using shrimp-and-fish co-culture to deliver fresh, biosecure, sustainably-farmed shrimp direct to HORECA and retail buyers.',
+      heroStats:[ {v:'AED 10.5M',l:'Total funding ask, for 33% equity'}, {v:'~45%',l:'Gross margin per 6-month production cycle'}, {v:'18 mo',l:'Estimated break-even post-launch'}, {v:'13,000+ MT',l:'Shrimp imported into Dubai annually'} ],
+      pillars:[ {t:'Grow',d:'Indoor RAS shrimp-and-fish co-culture, engineered for a water-scarce, high-heat climate'}, {t:'Secure',d:'Closed-loop biosecurity keeps disease and external pathogens out'}, {t:'Supply',d:'Direct-to-HORECA and retail, cutting the import supply chain'}, {t:'Scale',d:'A 3-year growth plan across additional GCC sites'} ],
+      market:{ demo:'UAE hotels, restaurants and catering groups (HORECA) and premium retail seeking fresh, traceable, sustainable seafood.', opp:'GCC seafood imports exceed $3B annually and Dubai alone imports over 13,000 MT of shrimp a year; interviews with 15+ HORECA buyers confirm demand for fresh, sustainable, local shrimp, and UAE food-security policy (Food Tech Valley) actively favors this kind of import substitution.', tam:'GCC seafood import-substitution opportunity, $3B+ annually', sam:'UAE fresh/sustainable shrimp supply to HORECA and retail, sized against 13,000+ MT/year of Dubai shrimp imports', som:'First RAS facility at ~125 MT per 6-month cycle, ~AED 3.25M revenue per cycle' },
+      pricing:[ {tier:'HORECA Direct Supply', price:'AED 26', unit:'per kg, wholesale', features:'Fresh shrimp delivered direct to hotels, restaurants and catering groups'}, {tier:'Retail & Distribution', price:'Market rate', unit:'per kg, via distribution partners', features:'Retail chains and specialty seafood counters'}, {tier:'Export / EXIM', price:'Custom', unit:'contract pricing', features:'Regional export across the GCC and Africa via the BlueHarvest EXIM arm'} ],
+      blueprint:{ legal:'UAE aquaculture/food-production license, positioned within a Food Tech Valley or agri-focused free zone.', physical:'A purpose-built, indoor, climate-controlled RAS facility.', org:'Founding team \u2192 aquaculture technical lead \u2192 farm operations staff \u2192 EXIM/distribution sales lead.', partners:'HORECA distribution partnerships (in negotiation), the Food Tech Valley program, and RAS equipment suppliers.' },
+      personas:[ {name:'Executive Chef', role:'F&B Director, 5-star Dubai hotel group', init:'C', quote:'Guests want to know their seafood is fresh and traceable, not flown in frozen.', pains:['Reliance on imported frozen shrimp with long supply chains'], goals:['A consistent, fresh, sustainably-farmed local shrimp supplier']},
+        {name:'Category Buyer', role:'Seafood category manager, UAE grocery chain', init:'B', quote:'Customers are asking for local and sustainable seafood options.', pains:['Import dependency and price volatility'], goals:['A reliable local supply chain for premium shrimp']} ],
+      costs:{ setup:[ {item:'Infrastructure setup (facility & site build-out)', cost:3675000}, {item:'Equipment & RAS systems', cost:4200000}, {item:'Working capital reserve', cost:1575000}, {item:'Marketing & team', cost:1050000} ],
+        opex:[ {item:'Feed & production inputs', cost:120000}, {item:'Facility utilities & maintenance (RAS systems)', cost:60000}, {item:'Farm & technical staff', cost:70000}, {item:'Logistics & distribution', cost:30000}, {item:'Admin & marketing', cost:20000} ] },
+      revenue:{ y1:2000000, y2:6500000, y3:9750000, monthly:[0,0,0,0,0,0,150,250,350,400,450,400], assumptions:'Year 1 is dominated by facility construction and RAS commissioning, with the first harvest cycle landing in the second half of the year; Year 2 reflects a full two-cycle year at steady state, and Year 3 reflects yield and capacity improvements.' },
+      ops:{ flow:['Facility Construction & RAS Commissioning','Shrimp & Fish Co-Culture Stocking','Water Quality & Biosecurity Monitoring','6-Month Grow-Out Cycle','Harvest & Quality Grading','HORECA & Retail Distribution','Reinvestment & Cycle Restart'],
+        staff:[ {m:'Months 1\u20136', r:'Founding team + aquaculture technical lead (facility build)'}, {m:'Month 7', r:'+Farm operations staff (stocking & monitoring)'}, {m:'Month 9', r:'+Distribution/EXIM sales lead'}, {m:'Month 12', r:'Evaluate a second production line'} ] },
+      marketing:{ pre:['HORECA buyer interviews and pre-commitments — 15+ already engaged','Food Tech Valley and government food-security partnership outreach'], digital:['Traceability-and-sustainability content aimed at hospitality and retail buyers'], seasonal:['Ramadan and peak tourism-season HORECA demand campaigns'] },
+      risks:[ {r:'RAS system technical failure or disease outbreak', l:'Med', i:'High', m:'Biosecure RAS design with redundant filtration and continuous water-quality monitoring.'},
+        {r:'Longer-than-planned construction and commissioning timeline', l:'Med', i:'High', m:'Phased commissioning with technical-partner oversight before full stocking.'},
+        {r:'Shrimp price volatility versus imports', l:'Med', i:'Med', m:'Lock in HORECA supply contracts ahead of harvest; lead with a freshness/traceability premium.'},
+        {r:'High upfront capital requirement', l:'High', i:'High', m:'Fund utilization phased to construction milestones; convertible note structure available for early backers.'},
+        {r:'Regulatory / food-safety licensing delays', l:'Med', i:'Med', m:'Early engagement with UAE food-safety and agriculture authorities.'},
+        {r:'Distribution partner dependency', l:'Med', i:'Med', m:'Diversify across HORECA direct, retail, and EXIM export channels.'},
+        {r:'Energy cost exposure from climate-controlled RAS', l:'Med', i:'Med', m:'Facility designed for energy efficiency; explore solar offset.'} ],
+      roadmap:[ {p:'Build', m:'Months 1\u20133', goals:['Facility design finalized','Site secured within Food Tech Valley or equivalent','First investment tranche deployed to infrastructure']},
+        {p:'Commission', m:'Months 4\u20136', goals:['RAS equipment installed and commissioned','Technical and farm operations team hired','Biosecurity protocols validated']},
+        {p:'Stock & Grow', m:'Months 7\u20139', goals:['First co-culture stocking cycle underway','HORECA distribution agreements signed']},
+        {p:'Harvest & Scale', m:'Months 10\u201312', goals:['First harvest cycle (~125 MT) sold to HORECA/retail','EXIM channel discussions advanced','Year 2 capacity expansion planned']} ],
+      ask:{ total:10500000, note:'Aligned to the fund-utilization plan: infrastructure, RAS equipment, working capital and marketing/team, raised against a pre-money valuation of AED 21M for 33% equity.', uses:[ {label:'Infrastructure setup', pct:35}, {label:'Equipment & RAS systems', pct:40}, {label:'Working capital', pct:15}, {label:'Marketing & team', pct:10} ] }
+    }
+  },
+  {
+    id:'hrms',
+    name:'GCC-Native HR Management System',
+    tagline:'Payroll, WPS/Mudad compliance and workforce management software built for how GCC companies actually operate.',
+    theme:{ accent:'#1C8C6E', deep:'#0F5C47', soft:'rgba(28,140,110,0.09)' },
+    setupMin:200000, setupMax:350000, roi:{bear:-25, base:10, bull:60}, reg:5, novelty:5,
+    plan:{ full:true,
+      brand:'Nawa HR', tagline:'Payroll and workforce management built for how GCC companies actually operate.',
+      vision:'Every GCC SME runs payroll, WPS compliance and workforce management as smoothly as an enterprise.',
+      mission:'We built a GCC-native HRMS automating UAE WPS and Saudi Mudad/Qiwa payroll, with Bahrain PDPL and Qatar PDPPL data-protection compliance built in — priced and designed for the SMEs that global platforms overlook.',
+      heroStats:[ {v:'AED 6+',l:'Starting price per employee, per month'}, {v:'2028',l:'Year projected EBITDA turns positive (AED 2.5M)'}, {v:'5',l:'Named GCC competitors mapped and out-positioned'}, {v:'2',l:'Compliance regimes natively supported: UAE WPS + Saudi Mudad/Qiwa'} ],
+      pillars:[ {t:'Comply',d:'Native UAE WPS, Saudi Mudad/Qiwa, EOSB and GOSI compliance automation'}, {t:'Pay',d:'Multi-currency, VAT-compliant payroll across GCC jurisdictions'}, {t:'Manage',d:'Leave, performance and workforce analytics in one bilingual platform'}, {t:'Integrate',d:'Bank file generation and ERP integrations that cut implementation friction'} ],
+      market:{ demo:'GCC SMEs and mid-market firms in construction, retail and healthcare — outgrowing spreadsheets but priced out of SAP SuccessFactors, Oracle HCM or Workday.', opp:'Global HRMS platforms lack WPS files, EOSB calculations and bilingual Arabic interfaces; regional vendors like MenaITech and Bayzat lack advanced AI-driven analytics — the gap is a hybrid of enterprise depth and regional compliance.', tam:'GCC HR technology market, growing rapidly on digital transformation and workforce diversification', sam:'UAE SME/mid-market HRMS spend, benchmarked against competitor pricing of AED 5\u201312 per employee/month', som:'Year 1 revenue of AED 1.30M against AED 3.61M of operating expense, per the 3-year financial model' },
+      pricing:[ {tier:'Basic', price:'AED 6', unit:'per employee/month', features:'Core HR, WPS payroll automation, bilingual self-service'}, {tier:'Standard', price:'AED 9 (est.)', unit:'per employee/month', features:'+ Leave, performance tracking, multi-currency payroll'}, {tier:'Premium', price:'AED 13 (est.)', unit:'per employee/month', features:'+ Advanced workforce analytics, ERP & bank integrations'} ],
+      blueprint:{ legal:'UAE mainland or free zone software entity, positioned to also serve Saudi, Bahrain and Qatar compliance regimes.', physical:'Cloud SaaS platform; remote-first engineering and support team.', org:'Founding team \u2192 engineering (core HRMS + compliance modules) \u2192 dedicated SDR/account-executive sales team \u2192 customer success.', partners:'Referral channels with banks and payroll-outsourcing firms; HR tech conference and roadshow presence.' },
+      personas:[ {name:'Finance Manager', role:'Mid-market construction firm, UAE', init:'F', quote:'WPS files and EOSB calculations eat a full week every payroll cycle.', pains:['Manual WPS file generation','EOSB calculation errors and compliance risk'], goals:['Automated, audit-ready payroll compliance']},
+        {name:'HR Lead', role:'Retail chain HR manager, Saudi Arabia', init:'H', quote:'Global platforms don\u2019t support Mudad or Qiwa — we\u2019re stuck exporting to spreadsheets.', pains:['Global HRMS platforms miss GCC-specific compliance'], goals:['One bilingual system covering UAE and Saudi payroll natively']} ],
+      costs:{ setup:[ {item:'Platform engineering (core HRMS + compliance modules)', cost:180000}, {item:'Compliance certification & legal (WPS/Mudad/PDPL alignment)', cost:60000}, {item:'Brand, website & sales collateral', cost:25000}, {item:'Working capital buffer', cost:35000} ],
+        opex:[ {item:'Engineering & product (core + compliance modules)', cost:120000}, {item:'Sales team (SDR + account executives)', cost:70000}, {item:'Marketing (ramping AED 40K\u2013120K per the GTM plan)', cost:80000}, {item:'Compliance & legal retainer', cost:15000}, {item:'Cloud hosting & infrastructure', cost:10000} ] },
+      revenue:{ y1:1297874, y2:6334975, y3:12058963, monthly:[40,50,65,80,95,110,120,130,145,155,160,147], assumptions:'Figures are the exact 3-year projection from the reference financial model: Year 1 revenue of AED 1,297,874 against AED 3,612,000 of operating expense, reaching positive EBITDA of AED 2,506,863 by 2028.' },
+      ops:{ flow:['Core HR & Onboarding Setup','Payroll & WPS/Mudad Compliance Automation','Data Protection & Consent Configuration (PDPL/PDPPL)','Leave, Performance & Analytics Modules','Bank & ERP Integration','Client Onboarding & Support','Continuous Compliance Updates'],
+        staff:[ {m:'Month 1', r:'Founding team + core engineering'}, {m:'Month 3', r:'+Compliance/legal advisor (WPS, PDPL)'}, {m:'Month 6', r:'+SDR and account-executive sales team'}, {m:'Month 10', r:'+Customer success lead'} ] },
+      marketing:{ pre:['Direct outreach to construction, retail and healthcare SMEs via existing network'], digital:['SEO content, webinars and thought-leadership on WPS/EOSB compliance','A free "WPS health-check" lead-magnet tool'], seasonal:['HR tech conference and roadshow participation targeting mid-sized enterprises'] },
+      risks:[ {r:'Fragmented, multi-jurisdictional GCC labor law', l:'Med', i:'High', m:'Modular country-compliance packs (UAE WPS, Saudi Mudad/Qiwa) built and certified independently.'},
+        {r:'Strict cross-border data protection requirements (Bahrain PDPL, Qatar PDPPL)', l:'Med', i:'High', m:'Built-in consent management, encryption and data-residency configuration per jurisdiction.'},
+        {r:'SMEs are price-sensitive and resource-constrained', l:'Med', i:'Med', m:'Transparent, modular per-employee pricing starting at AED 6/employee/month.'},
+        {r:'Established competitors (SAP, Oracle, Workday) hold brand trust', l:'Med', i:'High', m:'Win on GCC-native compliance and price where they are complex and expensive.'},
+        {r:'Regional vendors (MenaITech, Bayzat) already serve part of the gap', l:'Med', i:'Med', m:'Differentiate on AI-driven analytics and deeper compliance automation.'},
+        {r:'Negative EBITDA projected through 2027', l:'High', i:'High', m:'Disciplined marketing ramp tied to CAC targets, improving from AED 15K to AED 8K by Year 3.'},
+        {r:'Implementation complexity for mid-market ERP integration', l:'Med', i:'Med', m:'Pre-built bank and ERP integrations to reduce onboarding friction.'} ],
+      roadmap:[ {p:'Build & Certify', m:'Months 1\u20133', goals:['Core HRMS engineering underway','UAE WPS compliance module certified','Compliance/legal advisor onboarded']},
+        {p:'Launch & Sell', m:'Months 4\u20136', goals:['Saudi Mudad/Qiwa module live','SDR and account-executive team hired','First paying SME clients onboarded']},
+        {p:'Scale Compliance', m:'Months 7\u20139', goals:['Bahrain PDPL and Qatar PDPPL modules live','Bank and ERP integrations launched']},
+        {p:'Prove the Model', m:'Months 10\u201312', goals:['Client base scaling toward the Year 2 revenue ramp','CAC trending toward the AED 10K target','Year 2 fundraising case prepared']} ],
+      ask:{ total:300000, note:'Covers core platform engineering, compliance certification and initial go-to-market; the reference financial model projects AED 3.61M of Year-1 operating expense funded through working capital and the revenue ramp, reaching positive EBITDA by 2028.', uses:[ {label:'Engineering & compliance modules', pct:60}, {label:'Compliance & legal certification', pct:20}, {label:'Brand & sales collateral', pct:8}, {label:'Working capital', pct:12} ] }
+    }
+  },
+  {
+    id:'riwaayat',
+    name:'Heritage Ethnic & Fusion Fashion Boutique',
+    tagline:'"Heritage. Elegance. You." — a premium ethnic and fusion boutique for a Tier-2 South Asian market with no dedicated premium competitor.',
+    theme:{ accent:'#1C8C6E', deep:'#0F5C47', soft:'rgba(28,140,110,0.09)' },
+    setupMin:70000, setupMax:95000, roi:{bear:-20, base:32, bull:85}, reg:2, novelty:6,
+    plan:{ full:true, currency:'INR',
+      brand:'Riwaayat by Sana', tagline:'Heritage. Elegance. You.',
+      vision:'To establish Berhampore\u2019s most premium ethnic & fusion fashion boutique, serving the aspirational middle class of Murshidabad\u2019s Tier-2 market.',
+      mission:'We curate and retail Pakistani suits, silk and designer sarees, and fusion wear through a premium, mall-like boutique experience where no dedicated premium competitor currently exists.',
+      heroStats:[ {v:'\u20b918\u201322L',l:'Total setup investment'}, {v:'\u20b93\u20134L/mo',l:'Projected Year-1 revenue run-rate'}, {v:'14\u201318 mo',l:'Break-even period'}, {v:'28\u201335%',l:'Target gross margin'} ],
+      pillars:[ {t:'Curated Collection',d:'Hand-picked Pakistani suits, sarees and fusion wear matched to local taste'}, {t:'Premium Ambience',d:'A mall-like store experience inside a Tier-2 city'}, {t:'Value Pricing',d:'Affordable luxury positioned for the aspirational middle class'}, {t:'Omni-Channel',d:'In-store sales plus WhatsApp and social commerce'} ],
+      market:{ demo:'Berhampore, Murshidabad District, West Bengal \u2014 population ~3.5 lakh, median age 24\u201335, Muslim-majority with a significant Hindu population, household income \u20b925,000\u2013\u20b960,000/month and rising, ~68% internet penetration.', opp:'No dedicated premium Pakistani-suit boutique exists in the area; saree demand surges in wedding season, and Eid plus Durga Puja together drive roughly 45% of annual revenue, while the nearest comparable retail is a 3.5-hour trip to Kolkata.', tam:'Berhampore and greater Murshidabad ethnic-fashion retail spend, on a fashion-conscious, socially-active youth demographic', sam:'Premium ethnic and fusion wear across Pakistani suits, sarees and fusion categories for the district\u2019s aspirational middle class', som:'Year 1 revenue of \u20b925\u201330 lakh against \u20b918\u201320 lakh cost, per the 3-year forecast' },
+      pricing:[ {tier:'Pakistani Suits', price:'\u20b9800 \u2013 \u20b912,000', unit:'per piece \u00b7 40% of inventory', features:'Embroidered lawn, bridal 3-piece, chiffon/georgette, cotton karandi, designer Patiala & Anarkali'}, {tier:'Sarees', price:'\u20b9500 \u2013 \u20b918,000', unit:'per piece \u00b7 35% of inventory', features:'Silk (Banarasi/Kanjivaram replica), cotton tant, georgette/chiffon party sarees, Jamdani, bridal sarees'}, {tier:'Indo-Ethnic & Fusion Wear', price:'\u20b9600 \u2013 \u20b95,500', unit:'per piece \u00b7 25% of inventory', features:'Ethnic kurtas, co-ord sets, printed midi/maxi dresses, fusion tunics, party jumpsuits'} ],
+      blueprint:{ legal:'Local retail trade license and Berhampore/Murshidabad municipal registration.', physical:'500\u2013700 sq ft ground-floor store in Neemtala or Judge Court Market, zoned by category with 2 trial rooms.', org:'Owner/store manager \u2192 1 senior sales executive \u2192 1\u20132 floor/tailoring associates \u2192 part-time social media cataloguer.', partners:'Wholesale sourcing from Kolkata New Market, Surat (fusion) and Delhi Chandni Chowk (Pakistani suits); local bridal makeup artists and wedding photographers for referrals.' },
+      personas:[ {name:'Razia / Fatima', role:'22\u201338 yrs, married, Muslim household', init:'R', quote:'I want Pakistani suits and embroidered pieces for Eid and family functions.', pains:['Limited premium options locally; a 4-hour trip to Kolkata for quality'], goals:['Pakistani suit collections with embroidery and zari work, budget \u20b91,500\u20136,000']},
+        {name:'Priya / Ankita', role:'18\u201328 yrs, college/working, trend-forward', init:'P', quote:'I follow Instagram trends and want affordable party wear.', pains:['Fast-fashion online options lack quality and a try-on experience'], goals:['Co-ord sets and ethnic dresses for parties and college fests, budget \u20b9800\u20133,000']} ],
+      costs:{ setup:[ {item:'Store rent (advance + security)', cost:180000}, {item:'Interior design & renovation', cost:250000}, {item:'Furniture (racks, counters, mannequins)', cost:120000}, {item:'Initial inventory (stock)', cost:800000}, {item:'Signage & branding', cost:40000}, {item:'POS/billing software + hardware', cost:35000}, {item:'CCTV & security system', cost:20000}, {item:'Contingency (10%)', cost:125000} ],
+        opex:[ {item:'Rent', cost:30000}, {item:'Staff (2\u20133 persons)', cost:35000}, {item:'Electricity', cost:6500}, {item:'Restocking inventory', cost:100000}, {item:'Marketing / ads', cost:12500}, {item:'Misc. & maintenance', cost:6500} ] },
+      revenue:{ y1:2750000, y2:4150000, y3:6000000, monthly:[120,130,140,160,180,200,220,240,260,320,380,400], assumptions:'Eid (Mar/Apr) and Durga Puja (Oct) together drive roughly 45% of annual revenue; smart pre-season buying 2 months ahead is critical to maximize festive-season margins.' },
+      ops:{ flow:['Source (Kolkata/Surat/Delhi wholesale markets)','Purchase (quarterly buying trips & wholesaler relationships)','Stock (POS-managed, 6-week pre-festival seasonal stocking)','Display (zoned by category, weekly mannequin rotation)','Sell (in-store + WhatsApp + Instagram catalogue)','Reorder (fast-movers reordered at 30% stock level)'],
+        staff:[ {m:'Month 1', r:'Owner/Store Manager (inventory, billing, vendor management)'}, {m:'Month 1', r:'+1 Senior Sales Executive (styling, upselling)'}, {m:'Month 2', r:'+1\u20132 Floor/Tailoring Associates'}, {m:'Month 3', r:'+Part-time Social Media Cataloguer'} ] },
+      marketing:{ pre:['Instagram/Facebook tease campaign plus 5,000 flyers distributed locally','"Early bird 20% off" launch coupons and a 500-contact WhatsApp broadcast list at launch'], digital:['Daily Instagram Reels styling videos; WhatsApp Status catalogue updates 3\u00d7/week','Google My Business listing; collaborations with local micro-influencers (5\u201315K followers)'], seasonal:['Eid Sale (Mar/Apr): 15\u201325% off Pakistani suits','Durga Puja (Oct): saree specials with free blouse fall','Wedding season (Nov\u2013Feb): bridal packages with bulk discounts'] },
+      risks:[ {r:'Seasonal revenue gaps (low sales May\u2013Aug)', l:'High', i:'High', m:'Introduce cotton daily-wear and school uniforms; budget a 3-month cash reserve.'},
+        {r:'Inventory dead stock from wrong buying choices', l:'High', i:'High', m:'Small test lots, quick-sale events, and return policies with suppliers.'},
+        {r:'Competition from online retailers (Meesho/Amazon)', l:'Med', i:'Med', m:'Focus on experience, try-on and personal styling as the offline advantage.'},
+        {r:'Staff turnover to Kolkata', l:'Med', i:'Med', m:'Incentive-linked salary and profit-sharing for senior staff.'},
+        {r:'Rent increase after year one', l:'Med', i:'Med', m:'Lock in a 2\u20133 year lease with a negotiated cap upfront.'},
+        {r:'Occasional religious/political unrest locally', l:'Low', i:'Low', m:'Build an inclusive brand serving both Hindu and Muslim segments.'},
+        {r:'Frequent power outages (regional load-shedding)', l:'Low', i:'Low', m:'Inverter backup for lighting and POS; generator for major sale days.'} ],
+      roadmap:[ {p:'Setup & Pre-Launch', m:'Months 1\u20132', goals:['Finalize store lease in Neemtala/Judge Court Market','Complete interior renovation and fit-out','Source 3 key wholesale suppliers and recruit 2 sales staff']},
+        {p:'Grand Launch & Brand Building', m:'Months 3\u20135', goals:['Grand opening event with launch discounts','Run Instagram/Facebook ads and build a WhatsApp broadcast list','Target \u20b91.5\u20132 lakh/month revenue']},
+        {p:'Stabilize & Optimize', m:'Months 6\u20139', goals:['Analyze fast vs. slow-moving inventory; add made-to-order suits','Tie up with 2 local wedding planners','Target \u20b92.5\u20133 lakh/month revenue']},
+        {p:'Festival Season Domination', m:'Months 10\u201312', goals:['Stock heavily ahead of Puja and Eid; hire festival-rush part-time staff','Run exclusive bridal package promotions','Target \u20b94\u20135 lakh revenue in Oct\u2013Dec alone; plan Year 2 online expansion']} ],
+      ask:{ total:1820000, askAedEquivalent:82000, note:'Setup capital of \u20b915,70,000 plus a \u20b92,50,000 working-capital reserve, per the original investment plan.', uses:[ {label:'Store build-out (rent, interior, furniture, signage, POS, security)', pct:42}, {label:'Initial inventory stock', pct:44}, {label:'Working capital reserve', pct:14} ] }
+    }
+  },
+  {
+    id:'restaurant',
+    name:'Cross-Cultural Neighborhood Restaurant',
+    tagline:'A neighborhood table built around the GCC\u2019s most craveable cross-cultural menu.',
+    theme:{ accent:'#1C8C6E', deep:'#0F5C47', soft:'rgba(28,140,110,0.09)' },
+    setupMin:250000, setupMax:600000, roi:{bear:-25, base:20, bull:60}, reg:5, novelty:4,
+    plan:{ full:false,
+      brand:'Maidan Table', tagline:'A neighborhood table built around the GCC\u2019s most craveable cross-cultural menu.',
+      vision:'A neighborhood restaurant that becomes the default answer to "where should we eat" for its community.',
+      mission:'We build and operate a single flagship restaurant with a tight, cross-cultural menu and hospitality-first execution, before considering a second site.',
+      heroStats:[ {v:'AED 425K',l:'Average setup investment'}, {v:'+20%',l:'Base-case 18-month ROI'}, {v:'5/10',l:'Regulatory hurdle — food & municipality licensing'}, {v:'4/10',l:'Novelty — execution quality is the differentiator, not concept'} ],
+      pillars:[ {t:'Menu',d:'A tight, cross-cultural menu built for repeat visits'}, {t:'Hospitality',d:'Service standard as the actual product differentiator'}, {t:'Operate',d:'Disciplined food cost and labor management from day one'}, {t:'Expand',d:'A second-site decision only after the first proves out'} ],
+      market:{ demo:'Residents and professionals in a dense UAE neighborhood seeking a reliable, craveable, mid-premium dining option.', opp:'Restaurant failure is usually an execution problem, not a concept problem — disciplined operations is the real opportunity.', tam:'UAE F&B market, multi-billion annually', sam:'Mid-premium neighborhood dining in target districts, ~$100\u2013180M', som:'1 flagship location, AED 3\u20134M Year 1 revenue' }
+    }
+  },
+  {
+    id:'manpower',
+    name:'3PL Manpower & Logistics Staffing',
+    tagline:'The staffing bench that keeps GCC delivery and warehouse floors fully covered — bikers, pickers, and logistics labor on demand.',
+    theme:{ accent:'#1C8C6E', deep:'#0F5C47', soft:'rgba(28,140,110,0.09)' },
+    setupMin:60000, setupMax:150000, roi:{bear:-10, base:38, bull:95}, reg:3, novelty:5,
+    plan:{ full:false,
+      brand:'Rukn Staffing', tagline:'The staffing bench that keeps GCC delivery and warehouse floors fully covered.',
+      vision:'No q-commerce or warehouse operator loses a shift to an empty roster again.',
+      mission:'We supply and manage on-demand bikers, pickers and warehouse labor for q-commerce, retail and 3PL operators across the UAE.',
+      heroStats:[ {v:'AED 105K',l:'Average setup investment'}, {v:'+38%',l:'Base-case 18-month ROI'}, {v:'3/10',l:'Regulatory hurdle — labor supply licensing (MOHRE)'}, {v:'5/10',l:'Novelty — reliability-as-a-service in a fragmented category'} ],
+      pillars:[ {t:'Supply',d:'A standing bench of bikers, pickers and warehouse labor'}, {t:'Deploy',d:'On-demand shift coverage for q-commerce and 3PL operators'}, {t:'Comply',d:'MOHRE-compliant labor supply and worker welfare standards'}, {t:'Retain',d:'Worker retention systems that reduce costly turnover'} ],
+      market:{ demo:'Q-commerce, retail and 3PL operators across the UAE managing volatile shift-labor demand.', opp:'Labor shortages and turnover are one of the least-addressed cost centers in GCC quick-commerce and logistics.', tam:'GCC logistics and light-industrial staffing market, multi-billion', sam:'UAE q-commerce and 3PL shift-labor staffing, ~$200\u2013300M', som:'8 operator contracts, 150 active workers in Year 1' }
+    }
+  },
+  {
+    id:'hivepoint',
+    name:'Shared Dark-Store Fulfillment Hub',
+    tagline:'One dark store, multiple competing quick-commerce brands, one shared 3PL cost base for the whole GCC.',
+    theme:{ accent:'#1C8C6E', deep:'#0F5C47', soft:'rgba(28,140,110,0.09)' },
+    setupMin:200000, setupMax:450000, roi:{bear:-15, base:33, bull:85}, reg:4, novelty:7,
+    plan:{ full:false,
+      brand:'Hivepoint Fulfillment', tagline:'One dark store, five competing brands, one shared cost base.',
+      vision:'Every small quick-commerce brand gets warehouse-grade fulfillment economics without warehouse-grade capital.',
+      mission:'We operate shared dark-store fulfillment hubs serving multiple competing online brands as a single outsourced 3PL layer, splitting fixed costs across all of them.',
+      heroStats:[ {v:'AED 325K',l:'Average setup investment per hub'}, {v:'+33%',l:'Base-case 18-month ROI'}, {v:'4/10',l:'Regulatory hurdle — municipality warehouse & multi-client contracts'}, {v:'7/10',l:'Novelty — shared-hub aggregation is rare in the region today'} ],
+      pillars:[ {t:'Aggregate',d:'Multiple competing brands share one physical fulfillment hub'}, {t:'Optimize',d:'Fixed costs split across clients, unlocking mid-market economics'}, {t:'Fulfill',d:'Pick, pack and last-mile handoff run as one unified operation'}, {t:'Expand',d:'A replicable hub model across additional GCC cities'} ],
+      market:{ demo:'Small and mid-size quick-commerce brands priced out of their own dark-store network.', opp:'Quick-commerce economics only work at scale — a shared hub gives smaller brands that scale without the capital.', tam:'GCC quick-commerce fulfillment infrastructure, multi-billion', sam:'UAE shared dark-store fulfillment for mid-market brands, ~$150\u2013250M', som:'1 operating hub serving 4\u20135 brands in Year 1' }
+    }
+  }
+];
+
+const CATEGORIES = {
+  moonshot: { title:'Moonshot Vault', glyph:'⭒˚.⋆⭒🪐', tagline:'Six ventures the world hasn\u2019t built yet — run against your capital.', concepts: MOONSHOT },
+  nexum:     { title:'Nexum Infinity', glyph:'જ⁀➴', tagline:'Breakthrough-level GCC concepts pulled from the edge of what\u2019s next.', concepts: NEXUM },
+  edge:      { title:'Edge of Possible', glyph:'.☘︎ ݁˖', tagline:'Practical, buildable ventures ready for GCC execution today.', concepts: EDGE }
+};
+
+const WEIGHTS = { conservative:{capex:0.30,roi:0.35,reg:0.30,novelty:0.05}, balanced:{capex:0.20,roi:0.40,reg:0.20,novelty:0.20}, aggressive:{capex:0.10,roi:0.45,reg:0.10,novelty:0.35} };
+const ROI_WEIGHTS = { conservative:{bear:0.50,base:0.40,bull:0.10}, balanced:{bear:0.20,base:0.50,bull:0.30}, aggressive:{bear:0.05,base:0.35,bull:0.60} };
+
+let currentRisk = 'balanced';
+let activeCat = null;
+let selectedId = null;
+
+function fmtAED(n){ return 'AED ' + Math.round(n).toLocaleString('en-US'); }
+function fmtAEDShort(n){
+  if (n >= 1000000) return 'AED ' + (n/1000000).toFixed(2).replace(/\.00$/,'') + 'M';
+  if (n >= 1000) return 'AED ' + Math.round(n/1000) + 'K';
+  return fmtAED(n);
+}
+function fmtMoney(n, cur){
+  if (cur === 'INR') return '\u20b9' + Math.round(n).toLocaleString('en-IN');
+  return fmtAED(n);
+}
+function fmtMoneyShort(n, cur){
+  if (cur === 'INR'){
+    if (n >= 10000000) return '\u20b9' + (n/10000000).toFixed(2).replace(/\.00$/,'') + 'Cr';
+    if (n >= 100000) return '\u20b9' + (n/100000).toFixed(2).replace(/\.00$/,'') + 'L';
+    return fmtMoney(n, cur);
+  }
+  return fmtAEDShort(n);
+}
+
+function computeFit(c, capital, risk){
+  const setupAvg = (c.setupMin + c.setupMax) / 2;
+  const capexScore = Math.max(0, Math.min(100, (capital / setupAvg) * 100));
+  const rw = ROI_WEIGHTS[risk];
+  const roiWeighted = c.roi.bear * rw.bear + c.roi.base * rw.base + c.roi.bull * rw.bull;
+  const roiScore = Math.max(0, Math.min(100, ((roiWeighted + 30) / 180) * 100));
+  const regScore = (10 - c.reg) * 10;
+  const noveltyScore = c.novelty * 10;
+  const w = WEIGHTS[risk];
+  const total = capexScore * w.capex + roiScore * w.roi + regScore * w.reg + noveltyScore * w.novelty;
+  let feasibility = 'Ready to launch';
+  if (capital < c.setupMin * 0.6) feasibility = 'Undercapitalized \u2014 raise or phase the build';
+  else if (capital < c.setupMin) feasibility = 'Tight \u2014 workable with a lean scope';
+  else if (capital > c.setupMax * 2) feasibility = 'Over-resourced \u2014 consider phasing capital deployment';
+  return { total: Math.round(total), feasibility, setupAvg };
+}
+
+function getCapital(){ return Number(document.getElementById('capitalInput').value) || 0; }
+
+function openCategory(catId){
+  activeCat = catId; selectedId = null;
+  document.querySelectorAll('.flagship').forEach(f => f.classList.toggle('active', f.dataset.cat === catId));
+  document.getElementById('workspace').classList.add('open');
+  document.getElementById('workspaceEmpty').style.display = 'none';
+  const cat = CATEGORIES[catId];
+  document.getElementById('wsGlyph').textContent = cat.glyph;
+  document.getElementById('wsTitle').textContent = cat.title;
+  document.getElementById('wsTagline').textContent = cat.tagline;
+  renderAll();
+  setTimeout(() => { document.getElementById('workspace').scrollIntoView({ behavior:'smooth', block:'start' }); }, 60);
+}
+
+function renderAll(){
+  if (!activeCat) return;
+  const capital = getCapital();
+  const concepts = CATEGORIES[activeCat].concepts;
+  const scored = concepts.map(c => ({ c, fit: computeFit(c, capital, currentRisk) })).sort((a,b) => b.fit.total - a.fit.total);
+
+  const rankList = document.getElementById('rankList');
+  rankList.innerHTML = scored.map((s,i) => `
+    <div class="rank-row" data-id="${s.c.id}">
+      <div class="rank-num">${i+1}</div>
+      <div class="rank-name">${s.c.name}</div>
+      <div class="rank-bar-track"><div class="rank-bar-fill" style="width:${s.fit.total}%"></div></div>
+      <div class="rank-score">${s.fit.total}</div>
+    </div>`).join('');
+  rankList.querySelectorAll('.rank-row').forEach(el => {
+    el.addEventListener('click', () => { selectedId = el.dataset.id; renderCards(); renderReport(); scrollToReport(); });
+  });
+
+  renderCards();
+  renderReport();
+}
+
+function renderCards(){
+  const capital = getCapital();
+  const concepts = CATEGORIES[activeCat].concepts;
+  const grid = document.getElementById('cardGrid');
+  grid.innerHTML = concepts.map((c,i) => {
+    const fit = computeFit(c, capital, currentRisk);
+    return `
+    <div class="vcard ${selectedId === c.id ? 'selected' : ''}" data-id="${c.id}">
+      <div class="num">0${i+1}</div>
+      <div class="name">${c.name}</div>
+      <div class="tag">${c.tagline}</div>
+      ${c.ground ? '<span class="tag-ground">Execution-led \u00b7 no engineering team needed</span>' : ''}
+      <div class="vcard-stats">
+        <div class="vcard-stat"><span class="k">SETUP</span><span class="v">${fmtAED(c.setupMin)}\u2013${fmtAED(c.setupMax).replace('AED ','')}</span></div>
+        <div class="vcard-stat"><span class="k">18-MO ROI (BASE)</span><span class="v ${c.roi.base>=0?'pos':'neg'}">${c.roi.base>0?'+':''}${c.roi.base}%</span></div>
+        <div class="vcard-stat"><span class="k">REG. HURDLE</span><span class="v">${c.reg}/10</span></div>
+        <div class="vcard-stat"><span class="k">FIT SCORE</span><span class="v gold-v">${fit.total}/100</span></div>
+      </div>
+      <div class="card-cta">${selectedId === c.id ? '\u2713 Plan Open Below' : 'Open Venture Profile \u2192'}</div>
+    </div>`;
+  }).join('');
+  grid.querySelectorAll('.vcard').forEach(el => {
+    el.addEventListener('click', () => {
+      selectedId = (selectedId === el.dataset.id) ? null : el.dataset.id;
+      renderCards(); renderReport();
+      if (selectedId) scrollToReport();
+    });
+  });
+}
+
+function scrollToReport(){ setTimeout(() => { const el = document.getElementById('reportPanel'); if (el) el.scrollIntoView({ behavior:'smooth', block:'start' }); }, 50); }
+
+function renderTable(rows, cols){
+  return `<table class="data-table"><thead><tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;
+}
+function riskBadge(level){
+  const cls = level.toLowerCase() === 'high' ? 'high' : (level.toLowerCase() === 'med' ? 'med' : 'low');
+  return `<span class="risk-badge ${cls}">${level}</span>`;
+}
+
+function renderReport(){
+  const panel = document.getElementById('reportPanel');
+  const capital = getCapital();
+  if (!selectedId){ panel.classList.remove('open'); panel.innerHTML=''; return; }
+  const concepts = CATEGORIES[activeCat].concepts;
+  const c = concepts.find(x => x.id === selectedId);
+  const p = c.plan;
+  const fit = computeFit(c, capital, currentRisk);
+  panel.style.setProperty('--c-accent', c.theme.accent);
+  panel.style.setProperty('--c-deep', c.theme.deep);
+  panel.style.setProperty('--c-soft', c.theme.soft);
+  panel.classList.add('open');
+
+  const heroBlock = `
+    <div class="report-hero">
+      <div class="report-eyebrow">Venture Profile</div>
+      <div class="report-brand">${p.brand}</div>
+      <div class="report-tagline">"${p.tagline}"</div>
+      <div class="report-fullname">Full concept: ${c.name}</div>
+      <div class="report-fit"><span class="num">${fit.total}</span><span class="lbl">Fit Score / 100</span></div>
+    </div>`;
+
+  const execBlock = `
+    <div class="rsec" id="${c.id}-exec">
+      <div class="rsec-num">01</div>
+      <h3>Executive Summary</h3>
+      <div class="vm-grid">
+        <div class="vm-box"><div class="k">Vision</div><p>${p.vision}</p></div>
+        <div class="vm-box"><div class="k">Mission</div><p>${p.mission}</p></div>
+      </div>
+      <div class="stat-grid">${p.heroStats.map(s=>`<div class="stat-card"><div class="v">${s.v}</div><div class="l">${s.l}</div></div>`).join('')}</div>
+      <div class="pillar-grid">${p.pillars.map(x=>`<div class="pillar-card"><div class="t">${x.t}</div><div class="d">${x.d}</div></div>`).join('')}</div>
+    </div>`;
+
+  const marketBlock = `
+    <div class="rsec" id="${c.id}-market" style="${p.full ? '' : 'border-bottom:none;'}">
+      <div class="rsec-num">02</div>
+      <h3>Market Analysis \u2014 Demographics &amp; Opportunity</h3>
+      <p class="lede"><b>Who:</b> ${p.market.demo}</p>
+      <p class="lede"><b>Why now:</b> ${p.market.opp}</p>
+      <div class="mkt-grid">
+        <div class="mkt-card"><div class="t">TAM</div>${p.market.tam}</div>
+        <div class="mkt-card"><div class="t">SAM</div>${p.market.sam}</div>
+        <div class="mkt-card"><div class="t">SOM \u2014 Year 1</div>${p.market.som}</div>
+      </div>
+    </div>`;
+
+  if (!p.full){
+    panel.innerHTML = heroBlock + `
+    <div class="report-nav">
+      <a href="#${c.id}-exec">Executive Summary</a>
+      <a href="#${c.id}-market">Market</a>
+    </div>` + execBlock + marketBlock + `
+    <div class="rsec teaser-cta" style="border-bottom:none;">
+      <div class="ask-box">
+        <div class="ask-sub" style="font-size:13px;">This is a strategic venture profile within ${CATEGORIES[activeCat].title}. A full 13-section business plan \u2014 pricing, cost tables, revenue projections, operations, risk analysis, 12-month roadmap and investment ask \u2014 can be built out on request using the same framework as the Moonshot Vault ventures.</div>
+        <a href="#contact" class="btn-primary">Request the Full Venture Report</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  const cur = p.currency || 'AED';
+  const setupTotal = p.costs.setup.reduce((s,x)=>s+x.cost,0);
+  const opexTotal = p.costs.opex.reduce((s,x)=>s+x.cost,0);
+  const maxMonthly = Math.max(...p.revenue.monthly);
+  const monthLabels = ['J','F','M','A','M','J','J','A','S','O','N','D'];
+  const maxYear = Math.max(p.revenue.y1, p.revenue.y2, p.revenue.y3);
+
+  const askForCompare = (p.ask.askAedEquivalent !== undefined) ? p.ask.askAedEquivalent : p.ask.total;
+  let fundStatus = 'short', fundText = 'Below the funding ask \u2014 plan to raise the gap or phase the build.';
+  if (capital >= askForCompare) { fundStatus = 'ok'; fundText = 'Your stated capital fully covers this investment ask.'; }
+  else if (capital >= askForCompare * 0.5) { fundStatus = 'partial'; fundText = 'Your stated capital covers roughly half the ask \u2014 workable with a phased rollout.'; }
+
+  panel.innerHTML = heroBlock + `
+    <div class="report-nav">
+      <a href="#${c.id}-exec">Exec Summary</a>
+      <a href="#${c.id}-market">Market</a>
+      <a href="#${c.id}-product">Product</a>
+      <a href="#${c.id}-blueprint">Blueprint</a>
+      <a href="#${c.id}-persona">Personas</a>
+      <a href="#${c.id}-costs">Costs</a>
+      <a href="#${c.id}-revenue">Revenue</a>
+      <a href="#${c.id}-ops">Operations</a>
+      <a href="#${c.id}-marketing">Marketing</a>
+      <a href="#${c.id}-risk">Risk</a>
+      <a href="#${c.id}-roadmap">Roadmap</a>
+      <a href="#${c.id}-ask">Investment Ask</a>
+    </div>` + execBlock + marketBlock + `
+
+    <div class="rsec" id="${c.id}-product">
+      <div class="rsec-num">03</div>
+      <h3>Product Portfolio &amp; Pricing</h3>
+      <div class="table-wrap">
+        ${renderTable(p.pricing.map(t=>`<tr><td><b>${t.tier}</b></td><td class="num">${t.price}</td><td>${t.unit}</td><td>${t.features}</td></tr>`).join(''), ['Tier','Price','Billing','What\u2019s Included'])}
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-blueprint">
+      <div class="rsec-num">04</div>
+      <h3>Business Layout Blueprint</h3>
+      <div class="mkt-grid">
+        <div class="mkt-card"><div class="t">Legal Structure</div>${p.blueprint.legal}</div>
+        <div class="mkt-card"><div class="t">Physical / Operational Setup</div>${p.blueprint.physical}</div>
+        <div class="mkt-card"><div class="t">Org Structure</div>${p.blueprint.org}</div>
+        <div class="mkt-card"><div class="t">Key Partnerships</div>${p.blueprint.partners}</div>
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-persona">
+      <div class="rsec-num">05</div>
+      <h3>Target Customer Profiles</h3>
+      <div class="persona-grid">
+        ${p.personas.map(pr => `
+        <div class="persona-card">
+          <div class="persona-top">
+            <div class="persona-avatar">${pr.init}</div>
+            <div><div class="persona-name">${pr.name}</div><div class="persona-role">${pr.role}</div></div>
+          </div>
+          <div class="persona-quote">${pr.quote}</div>
+          <div class="persona-list-label">Pain Points</div>
+          <ul>${pr.pains.map(x=>`<li>${x}</li>`).join('')}</ul>
+          <div class="persona-list-label">Goals</div>
+          <ul>${pr.goals.map(x=>`<li>${x}</li>`).join('')}</ul>
+        </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-costs">
+      <div class="rsec-num">06</div>
+      <h3>Cost Analysis</h3>
+      <div class="table-wrap">
+        <div class="table-title">Setup Costs \u2014 Total ${fmtMoney(setupTotal, cur)}</div>
+        ${renderTable(p.costs.setup.map(x=>`<tr><td>${x.item}</td><td class="num">${fmtMoney(x.cost, cur)}</td></tr>`).join(''), ['Item','Cost'])}
+      </div>
+      <div class="table-wrap">
+        <div class="table-title">Monthly Operating Costs \u2014 Total ${fmtMoney(opexTotal, cur)}/month at full staffing</div>
+        ${renderTable(p.costs.opex.map(x=>`<tr><td>${x.item}</td><td class="num">${fmtMoney(x.cost, cur)}</td></tr>`).join(''), ['Item','Monthly Cost'])}
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-revenue">
+      <div class="rsec-num">07</div>
+      <h3>Revenue Projections</h3>
+      <p class="lede">${p.revenue.assumptions}</p>
+      <div class="chart-wrap">
+        <div class="chart-label">Year 1 Monthly Revenue Ramp (${cur === 'INR' ? '\u20b9, thousands' : 'AED, thousands'})</div>
+        <div class="bars">
+          ${p.revenue.monthly.map((v,i)=>`<div class="bar-col"><div class="bar-val">${v}K</div><div class="bar" style="height:${Math.max(4,(v/maxMonthly)*100)}%"></div><div class="bar-lbl">${monthLabels[i]}</div></div>`).join('')}
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-label">3-Year Forecast</div>
+        <div class="year-bars">
+          <div class="year-col"><div class="year-val">${fmtMoneyShort(p.revenue.y1, cur)}</div><div class="year-bar" style="height:${Math.max(8,(p.revenue.y1/maxYear)*100)}%"></div><div class="year-lbl">Year 1</div></div>
+          <div class="year-col"><div class="year-val">${fmtMoneyShort(p.revenue.y2, cur)}</div><div class="year-bar" style="height:${Math.max(8,(p.revenue.y2/maxYear)*100)}%"></div><div class="year-lbl">Year 2</div></div>
+          <div class="year-col"><div class="year-val">${fmtMoneyShort(p.revenue.y3, cur)}</div><div class="year-bar" style="height:${Math.max(8,(p.revenue.y3/maxYear)*100)}%"></div><div class="year-lbl">Year 3</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-ops">
+      <div class="rsec-num">08</div>
+      <h3>Operations &amp; Supply Chain</h3>
+      <div class="chart-label" style="margin-bottom:10px;">Execution Flow</div>
+      <div class="flow-wrap">
+        ${p.ops.flow.map((n,i)=>`<div class="flow-node">${n}</div>${i<p.ops.flow.length-1?'<span class="flow-arrow">&#8594;</span>':''}`).join('')}
+      </div>
+      <div class="chart-label" style="margin:22px 0 4px 0;">Staffing Plan</div>
+      <div class="staff-grid">${p.ops.staff.map(s=>`<div class="staff-card"><div class="m">${s.m}</div><div class="r">${s.r}</div></div>`).join('')}</div>
+    </div>
+
+    <div class="rsec" id="${c.id}-marketing">
+      <div class="rsec-num">09</div>
+      <h3>Marketing Strategy</h3>
+      <div class="mkt-grid">
+        <div class="mkt-card"><div class="t">Pre-Launch</div><ul>${p.marketing.pre.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        <div class="mkt-card"><div class="t">Digital</div><ul>${p.marketing.digital.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        <div class="mkt-card"><div class="t">Seasonal Campaigns</div><ul>${p.marketing.seasonal.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-risk">
+      <div class="rsec-num">10</div>
+      <h3>Risk Analysis</h3>
+      <div class="risk-table-wrap">
+        <table class="rt">
+          <thead><tr><th style="width:26%">Risk</th><th>Likelihood</th><th>Impact</th><th style="width:38%">Mitigation</th></tr></thead>
+          <tbody>${p.risks.map(r=>`<tr><td>${r.r}</td><td>${riskBadge(r.l)}</td><td>${riskBadge(r.i)}</td><td>${r.m}</td></tr>`).join('')}</tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-roadmap">
+      <div class="rsec-num">11</div>
+      <h3>12-Month Roadmap</h3>
+      <div class="phase-track">
+        ${p.roadmap.map((ph,i)=>`<div class="phase-card"><div class="p">Phase ${i+1}</div><div class="m">${ph.m}</div><div class="t">${ph.p}</div><ul>${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`).join('')}
+      </div>
+    </div>
+
+    <div class="rsec" id="${c.id}-ask" style="border-bottom:none;">
+      <div class="rsec-num">12</div>
+      <h3>Conclusion &amp; Investment Ask</h3>
+      <div class="ask-box">
+        <div class="ask-amount">${fmtMoney(p.ask.total, cur)}</div>
+        <div class="ask-sub">${p.ask.note}${cur === 'INR' ? ' Figures in this section are shown in Indian Rupees (\u20b9), reflecting the original market plan; the AED setup range on the venture card is an approximate conversion for cross-portfolio comparison.' : ''}</div>
+        <div class="ask-fund-status ${fundStatus}">${fundText}</div>
+        <div class="use-of-funds">
+          <div class="chart-label" style="margin-bottom:2px;">Use of Funds</div>
+          ${p.ask.uses.map(u=>`<div class="uf-row"><div class="uf-label">${u.label}</div><div class="uf-track"><div class="uf-fill" style="width:${u.pct}%"></div></div><div class="uf-pct">${u.pct}%</div></div>`).join('')}
+        </div>
+        <div class="chart-label" style="margin-top:24px;">3-Year Return Summary</div>
+        <p class="lede" style="margin-top:8px;">On this ask, base-case revenue reaches ${fmtMoneyShort(p.revenue.y1, cur)} in Year 1, ${fmtMoneyShort(p.revenue.y2, cur)} in Year 2 and ${fmtMoneyShort(p.revenue.y3, cur)} in Year 3 \u2014 with an 18-month projected value on your stated capital of ${fmtAED(capital*(1+c.roi.base/100))} in the base case at a ${c.reg}/10 regulatory hurdle and a ${c.novelty}/10 novelty score against existing models.</p>
+      </div>
+    </div>`;
+}
+
+document.querySelectorAll('.flagship').forEach(f => {
+  f.addEventListener('click', () => openCategory(f.dataset.cat));
+});
+document.getElementById('capitalInput').addEventListener('input', (e) => { document.getElementById('capitalSlider').value = e.target.value; renderAll(); });
+document.getElementById('capitalSlider').addEventListener('input', (e) => { document.getElementById('capitalInput').value = e.target.value; renderAll(); });
+document.getElementById('riskToggle').addEventListener('click', (e) => {
+  const btn = e.target.closest('.risk-btn'); if (!btn) return;
+  document.querySelectorAll('.risk-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active'); currentRisk = btn.dataset.risk; renderAll();
+});
+
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  document.getElementById('formSuccess').classList.add('show');
+  e.target.reset();
+});
+
+function tickClock(){
+  const dubai = new Date(new Date().toLocaleString('en-US', { timeZone:'Asia/Dubai' }));
+  const h = dubai.getHours() % 12, m = dubai.getMinutes(), s = dubai.getSeconds();
+  const hDeg = h*30 + m*0.5, mDeg = m*6 + s*0.1, sDeg = s*6;
+  const hourEl = document.getElementById('clockHour');
+  const minEl = document.getElementById('clockMinute');
+  const secEl = document.getElementById('clockSecond');
+  const digitalEl = document.getElementById('clockDigital');
+  if (hourEl) hourEl.setAttribute('transform', `rotate(${hDeg} 60 60)`);
+  if (minEl) minEl.setAttribute('transform', `rotate(${mDeg} 60 60)`);
+  if (secEl) secEl.setAttribute('transform', `rotate(${sDeg} 60 60)`);
+  if (digitalEl) digitalEl.textContent = dubai.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+}
+tickClock();
+setInterval(tickClock, 1000);
+
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
